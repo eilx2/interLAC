@@ -1,4 +1,4 @@
-package expats.interlac;
+package com.mun.minh_minhh.interlac;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package expats.interlac;
+package com.mun.minh_minhh.interlac;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("expats.interlac", appContext.getPackageName());
+        assertEquals("com.mun.minh_minhh.interlac", appContext.getPackageName());
     }
 }
