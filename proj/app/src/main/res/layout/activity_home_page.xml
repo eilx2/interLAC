@@ -32,8 +32,6 @@
                 android:id="@+id/button"
                 android:layout_width="146dp"
                 android:layout_height="88dp"
-
-
                 android:layout_alignStart="@+id/button2"
                 android:layout_below="@+id/textView"
                 android:layout_marginTop="81dp"

@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".EventMain" />
-        <activity android:name=".BasicActivity"></activity>
+        <activity android:name=".BasicActivity" />
+        <activity android:name=".CameraMain" />
+        <activity android:name=".ChatMain"></activity>
     </application>
 
 </manifest>
