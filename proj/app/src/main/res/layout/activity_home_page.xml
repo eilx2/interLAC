@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.mun.minh_minhh.interlac.MainActivity">
+    tools:context="com.mun.minh_minhh.interlac.HomePage">
 
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1.16">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,11 +22,11 @@
                 android:id="@+id/button2"
                 android:layout_width="146dp"
                 android:layout_height="88dp"
+                android:layout_below="@+id/button"
+                android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="16dp"
-                android:text="CAMERA"
-                android:layout_below="@+id/button"
-                android:layout_centerHorizontal="true" />
+                android:text="CAMERA" />
 
             <Button
                 android:id="@+id/button"
@@ -34,9 +34,9 @@
                 android:layout_height="88dp"
 
 
-                android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/button3"
-                android:layout_marginTop="32dp"
+                android:layout_alignStart="@+id/button2"
+                android:layout_below="@+id/textView"
+                android:layout_marginTop="81dp"
                 android:text="EVENTS" />
 
             <Button
@@ -49,9 +49,19 @@
                 android:layout_marginTop="27dp"
                 android:text="SOCIAL?" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/button"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="45dp"
+                android:text="interLAC"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textSize="40sp" />
+
         </RelativeLayout>
     </FrameLayout>
-
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -59,5 +69,6 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation" />
+
 
 </LinearLayout>
