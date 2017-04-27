@@ -2,11 +2,15 @@ package com.mun.minh_minhh.interlac;
 
 
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 public class CameraMain extends BasicActivity {
 
@@ -41,12 +45,24 @@ public class CameraMain extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_main);
 
+        if (!permissionGranted())
+            getCameraPermission();
+
         // Create an instance of Camera
         mCamera = getCameraInstance();
 
         // Create our Preview view and set it as the content of our activity.
         mPreview = new CameraPreview(this, mCamera);
-        FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
+        RelativeLayout preview = (RelativeLayout) findViewById(R.id.camera_preview);
         preview.addView(mPreview);
+    }
+
+    private boolean permissionGranted() {
+        int permissionCode = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        return (permissionCode == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void getCameraPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},1);
     }
 }
