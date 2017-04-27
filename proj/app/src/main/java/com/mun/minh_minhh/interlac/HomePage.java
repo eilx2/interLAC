@@ -2,12 +2,14 @@ package com.mun.minh_minhh.interlac;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.BottomNavigationView;
 import android.view.View;
 import android.widget.Button;
 
 public class HomePage extends BasicActivity {
 
+    private static int Splash_time = 2000;
     public Button button;
     public void init1(){
         button = (Button)findViewById(R.id.button);
@@ -48,6 +50,7 @@ public class HomePage extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
         init1();
         init2();
         init3();
