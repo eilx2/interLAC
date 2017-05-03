@@ -7,13 +7,15 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.hardware.camera2.CameraDevice;
 
-public class CameraMain extends BasicActivity {
+public class CameraMain extends BasicActivity{
 
     private Camera mCamera;
     private CameraPreview mPreview;
@@ -56,6 +58,13 @@ public class CameraMain extends BasicActivity {
         // Create our Preview view and set it as the content of our activity.
         mPreview = new CameraPreview(this, mCamera);
         RelativeLayout preview = (RelativeLayout) findViewById(R.id.camera_preview);
+
+        //inflate navigation
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_camera);
+
+
         preview.addView(mPreview);
     }
 
