@@ -11,7 +11,7 @@ public class HomePage extends BasicActivity {
 
     private static int Splash_time = 2000;
     public Button button;
-    public void init1(){
+    public void init_events_button(){
         button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,7 +22,7 @@ public class HomePage extends BasicActivity {
         });
 
     }
-    public void init2(){
+    public void init_camera_button(){
         button = (Button)findViewById(R.id.button2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +33,7 @@ public class HomePage extends BasicActivity {
         });
 
     }
-    public void init3(){
+    public void init_chat_button(){
         button = (Button)findViewById(R.id.button3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +51,9 @@ public class HomePage extends BasicActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        init1();
-        init2();
-        init3();
+        init_events_button();
+        init_camera_button();
+        init_chat_button();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
