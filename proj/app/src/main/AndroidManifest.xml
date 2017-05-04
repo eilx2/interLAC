@@ -30,4 +30,5 @@
         <activity android:name=".SplashPage"></activity>
     </application>
 
+
 </manifest>

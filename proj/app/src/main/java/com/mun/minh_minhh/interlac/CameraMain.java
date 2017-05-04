@@ -10,16 +10,12 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.hardware.camera2.CameraDevice;
 
 public class CameraMain extends BasicActivity{
 
     private Camera mCamera;
     private CameraPreview mPreview;
-    private CameraDevice device;
 
     /** Check if this device has a camera */
     private boolean checkCameraHardware(Context context) {

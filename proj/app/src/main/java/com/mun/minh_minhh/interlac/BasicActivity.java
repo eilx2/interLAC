@@ -16,23 +16,23 @@ public  class BasicActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     if (!(BasicActivity.this instanceof HomePage))
-                        startActivity(new Intent(BasicActivity.this, HomePage.class));
+                        startActivity(new Intent(getApplicationContext(), HomePage.class));
                     return true;
                 case R.id.navigation_event:
                     if (!(BasicActivity.this instanceof EventMain))
-                        startActivity(new Intent(BasicActivity.this, EventMain.class));
+                        startActivity(new Intent(getApplicationContext(), EventMain.class));
                     return true;
                 case R.id.navigation_camera:
                     if (!(BasicActivity.this instanceof CameraMain))
-                        startActivity(new Intent(BasicActivity.this, CameraMain.class));
+                        startActivity(new Intent(getApplicationContext(), CameraMain.class));
                     return true;
                 case R.id.navigation_chat:
                     if (!(BasicActivity.this instanceof ChatMain))
-                        startActivity(new Intent(BasicActivity.this, ChatMain.class));
+                        startActivity(new Intent(getApplicationContext(), ChatMain.class));
                     return true;
                 case R.id.navigation_setting:
                     if (!(BasicActivity.this instanceof HomePage))
-                        startActivity(new Intent(BasicActivity.this, HomePage.class));
+                        startActivity(new Intent(getApplicationContext(), HomePage.class));
                     return true;
             }
             return false;
