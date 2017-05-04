@@ -5,7 +5,6 @@ import android.hardware.Camera;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-
 import java.io.IOException;
 
 
@@ -15,6 +14,8 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
     private SurfaceHolder mHolder;
     private Camera mCamera;
     public static final String TAG = "Camera error";
+
+
 
     public CameraPreview(Context context, Camera camera) {
         super(context);

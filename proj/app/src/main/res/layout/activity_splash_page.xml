@@ -8,14 +8,4 @@
     tools:context="com.mun.minh_minhh.interlac.SplashPage">
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="274dp"
-        android:layout_height="83dp"
-        android:layout_gravity="center_horizontal"
-        android:text="interLAC"
-        android:textColor="#ffffffff"
-        android:textSize="70sp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="274dp" />
 </android.support.constraint.ConstraintLayout>

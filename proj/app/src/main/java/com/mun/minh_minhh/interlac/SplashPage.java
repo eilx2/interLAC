@@ -6,18 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class SplashPage extends BasicActivity {
-    private static int Splash_time = 2000;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_page);
-        new Handler().postDelayed(new Runnable() {
+
+        Thread mySplash = new Thread(){
             @Override
             public void run() {
-                Intent homeIntent = new Intent(SplashPage.this, HomePage.class);
-                startActivity(homeIntent);
-                finish();
+                try {
+                    sleep(2000);
+                    Intent i = new Intent(getApplicationContext(), HomePage.class);
+                    startActivity(i);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }
-        },Splash_time);
+        };
+
+        mySplash.start();
     }
 }
