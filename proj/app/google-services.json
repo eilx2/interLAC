@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "636927978731",
+    "firebase_url": "https://interlac-bb03f.firebaseio.com",
+    "project_id": "interlac-bb03f",
+    "storage_bucket": "interlac-bb03f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636927978731:android:7d10da635c5d25df",
+        "android_client_info": {
+          "package_name": "com.mun.minh_minhh.interlac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "636927978731-3fdf3algjfe0ucvlefutp71on6v4jjpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWZ6XB7UbLJBrm-2BpKAU-LFhhEdbadhU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
