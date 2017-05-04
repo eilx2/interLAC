@@ -27,8 +27,11 @@
         <activity android:name=".BasicActivity" />
         <activity android:name=".CameraMain" />
         <activity android:name=".ChatMain" />
-        <activity android:name=".SplashPage"></activity>
+        <activity android:name=".SplashPage" />
+        <activity
+            android:name=".SettingsMain"
+            android:label="@string/title_activity_settings_main"
+            android:theme="@style/AppTheme"></activity>
     </application>
-
 
 </manifest>

@@ -31,8 +31,8 @@ public  class BasicActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ChatMain.class));
                     return true;
                 case R.id.navigation_setting:
-                    if (!(BasicActivity.this instanceof HomePage))
-                        startActivity(new Intent(getApplicationContext(), HomePage.class));
+                    if (!(BasicActivity.this instanceof SettingsMain))
+                        startActivity(new Intent(getApplicationContext(), SettingsMain.class));
                     return true;
             }
             return false;
