@@ -55,6 +55,7 @@ public class HomePage extends BasicActivity {
         init_camera_button();
         init_chat_button();
 
+        
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);

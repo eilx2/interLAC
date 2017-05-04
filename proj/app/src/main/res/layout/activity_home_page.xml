@@ -23,8 +23,8 @@
                 android:layout_width="206dp"
                 android:layout_height="88dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="18dp"
-                android:text="Scan picture"
+                android:layout_marginTop="20dp"
+                android:text="Scan Picture"
                 android:textAllCaps="false"
                 android:layout_below="@+id/button"
                 android:layout_alignStart="@+id/button" />
@@ -41,15 +41,16 @@
 
             <Button
                 android:id="@+id/button3"
+                style="@style/Widget.AppCompat.Button"
                 android:layout_width="146dp"
                 android:layout_height="88dp"
+                android:layout_alignEnd="@+id/button2"
+                android:layout_alignStart="@+id/button2"
+                android:layout_below="@+id/button2"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="26dp"
                 android:text="Chat"
-                android:textAllCaps="false"
-                android:layout_below="@+id/button2"
-                android:layout_alignEnd="@+id/button2"
-                android:layout_alignStart="@+id/button2" />
+                android:textAllCaps="false" />
 
             <ImageView
                 android:id="@+id/imageView"

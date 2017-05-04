@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "636927978731-jes3e9se8kmeadbeemldvm5agnsmljnr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mun.minh_minhh.interlac",
+            "certificate_hash": "349183a0c030c7d1da1cd157aa19de16530bdbf9"
+          }
+        },
+        {
           "client_id": "636927978731-3fdf3algjfe0ucvlefutp71on6v4jjpm.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -22,6 +30,9 @@
       "api_key": [
         {
           "current_key": "AIzaSyDWZ6XB7UbLJBrm-2BpKAU-LFhhEdbadhU"
+        },
+        {
+          "current_key": "AIzaSyADWpDqF9xNe672fGzeXlstKJicTYR72os"
         }
       ],
       "services": {
@@ -29,8 +40,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "636927978731-3fdf3algjfe0ucvlefutp71on6v4jjpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
