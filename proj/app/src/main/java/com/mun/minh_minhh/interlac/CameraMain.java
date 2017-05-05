@@ -14,7 +14,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Button;
 
 public class CameraMain extends BasicActivity{
 
@@ -44,6 +46,14 @@ public class CameraMain extends BasicActivity{
         return c; // returns null if camera is unavailable
     }
 
+    private void initScanButton() {
+        final Button button = (Button) findViewById(R.id.scan_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Server.writeReview(new Review("john","lol,shit",0,2));
+            }
+        });
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +75,8 @@ public class CameraMain extends BasicActivity{
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
+
+        initScanButton();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
