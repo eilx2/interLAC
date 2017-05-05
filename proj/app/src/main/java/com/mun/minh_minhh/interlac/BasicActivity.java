@@ -8,42 +8,43 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 public  class BasicActivity extends AppCompatActivity {
-    protected BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    if (!(BasicActivity.this instanceof HomePage))
-                        startActivity(new Intent(getApplicationContext(), HomePage.class));
-                    return true;
-                case R.id.navigation_event:
-                    if (!(BasicActivity.this instanceof EventMain))
-                        startActivity(new Intent(getApplicationContext(), EventMain.class));
-                    return true;
-                case R.id.navigation_camera:
-                    if (!(BasicActivity.this instanceof CameraMain))
-                        startActivity(new Intent(getApplicationContext(), CameraMain.class));
-                    return true;
-                case R.id.navigation_chat:
-                    if (!(BasicActivity.this instanceof ChatMain))
-                        startActivity(new Intent(getApplicationContext(), ChatMain.class));
-                    return true;
-                case R.id.navigation_setting:
-                    if (!(BasicActivity.this instanceof SettingsMain))
-                        startActivity(new Intent(getApplicationContext(), SettingsMain.class));
-                    return true;
-            }
-            return false;
-        }
-
-    };
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_basic);
 
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        Intent intent1 = new Intent(BasicActivity.this, HomePage.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.ic_event:
+                        Intent intent2 = new Intent(BasicActivity.this, EventMain.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.ic_camera:
+                        Intent intent3 = new Intent(BasicActivity.this, CameraMain.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.ic_chat:
+                        Intent intent4 = new Intent(BasicActivity.this, ChatMain.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.ic_setting:
+                        Intent intent5 = new Intent(BasicActivity.this, SettingsMain.class);
+                        startActivity(intent5);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
 }

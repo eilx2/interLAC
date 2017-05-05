@@ -2,26 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/ic_home"
         android:icon="@drawable/ic_home"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_event"
+        android:id="@+id/ic_event"
         android:icon="@drawable/ic_event"
         android:title="Events" />
 
     <item
-        android:id="@+id/navigation_camera"
+        android:id="@+id/ic_camera"
         android:icon="@drawable/ic_camera"
         android:title="Camera" />
     <item
-        android:id="@+id/navigation_chat"
+        android:id="@+id/ic_chat"
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
 
     <item
-        android:id="@+id/navigation_setting"
+        android:id="@+id/ic_setting"
         android:icon="@drawable/ic_setting"
         android:title="Settings" />
 

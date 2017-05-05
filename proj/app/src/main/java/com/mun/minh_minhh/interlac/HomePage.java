@@ -3,7 +3,10 @@ package com.mun.minh_minhh.interlac;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -49,19 +52,45 @@ public class HomePage extends BasicActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         setContentView(R.layout.activity_home_page);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setChecked(true);
 
+        /*button*/
         init_events_button();
         init_camera_button();
         init_chat_button();
 
-        
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_home);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        break;
+                    case R.id.ic_event:
+                        Intent intent2 = new Intent(HomePage.this, EventMain.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.ic_camera:
+                        Intent intent3 = new Intent(HomePage.this, CameraMain.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.ic_chat:
+                        Intent intent4 = new Intent(HomePage.this, ChatMain.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.ic_setting:
+                        Intent intent5 = new Intent(HomePage.this, SettingsMain.class);
+                        startActivity(intent5);
+                        break;
+
+                }
+                return false;
+            }
+        });
     }
-
-
 }

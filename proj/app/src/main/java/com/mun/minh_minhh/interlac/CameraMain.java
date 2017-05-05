@@ -4,12 +4,16 @@ package com.mun.minh_minhh.interlac;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 public class CameraMain extends BasicActivity{
@@ -56,9 +60,40 @@ public class CameraMain extends BasicActivity{
         RelativeLayout preview = (RelativeLayout) findViewById(R.id.camera_preview);
 
         //inflate navigation
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.setSelectedItemId(R.id.navigation_camera);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_home:
+                        Intent intent1 = new Intent(CameraMain.this, HomePage.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.ic_event:
+                        Intent intent2 = new Intent(CameraMain.this, EventMain.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.ic_camera:
+                        break;
+                    case R.id.ic_chat:
+                        Intent intent4 = new Intent(CameraMain.this, ChatMain.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.ic_setting:
+                        Intent intent5 = new Intent(CameraMain.this, SettingsMain.class);
+                        startActivity(intent5);
+                        break;
+
+                }
+                return false;
+            }
+        });
 
 
         preview.addView(mPreview);
