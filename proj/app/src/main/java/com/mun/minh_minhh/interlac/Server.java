@@ -7,6 +7,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Server {
     private static final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -14,6 +15,10 @@ public class Server {
     public Server() {
     }
 
+    public static void loginUser() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
+    }
     public static int getReviews() {
        // DatabaseReference ref = mDatabase.getRef("reviews");
         return 1;
