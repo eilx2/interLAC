@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.util.Log;
 
 public class HomePage extends BasicActivity {
 
@@ -53,6 +54,8 @@ public class HomePage extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        super.initBottomNavigation();
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         BottomNavHelp.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
@@ -64,33 +67,6 @@ public class HomePage extends BasicActivity {
         init_camera_button();
         init_chat_button();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_home:
-                        break;
-                    case R.id.ic_event:
-                        Intent intent2 = new Intent(HomePage.this, EventMain.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.ic_camera:
-                        Intent intent3 = new Intent(HomePage.this, CameraMain.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.ic_chat:
-                        Intent intent4 = new Intent(HomePage.this, ChatMain.class);
-                        startActivity(intent4);
-                        break;
-                    case R.id.ic_setting:
-                        Intent intent5 = new Intent(HomePage.this, SettingsMain.class);
-                        startActivity(intent5);
-                        break;
-
-                }
-                return false;
-            }
-        });
     }
 }

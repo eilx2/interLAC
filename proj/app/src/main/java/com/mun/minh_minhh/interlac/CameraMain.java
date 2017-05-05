@@ -58,6 +58,8 @@ public class CameraMain extends BasicActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_main);
+        super.initBottomNavigation();
+
 
         if (!permissionGranted())
             getCameraPermission();
@@ -78,38 +80,12 @@ public class CameraMain extends BasicActivity{
 
         initScanButton();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_home:
-                        Intent intent1 = new Intent(CameraMain.this, HomePage.class);
-                        startActivity(intent1);
-                        break;
-                    case R.id.ic_event:
-                        Intent intent2 = new Intent(CameraMain.this, EventMain.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.ic_camera:
-                        break;
-                    case R.id.ic_chat:
-                        Intent intent4 = new Intent(CameraMain.this, ChatMain.class);
-                        startActivity(intent4);
-                        break;
-                    case R.id.ic_setting:
-                        Intent intent5 = new Intent(CameraMain.this, SettingsMain.class);
-                        startActivity(intent5);
-                        break;
-
-                }
-                return false;
-            }
-        });
 
 
         preview.addView(mPreview);
     }
+
+
 
     private boolean permissionGranted() {
         int permissionCode = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);

@@ -9,8 +9,8 @@ public class SplashPage extends BasicActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_page);
+        super.onCreate(savedInstanceState);
 
         Thread mySplash = new Thread(){
             @Override
