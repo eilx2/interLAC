@@ -24,15 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventMain" />
-        <activity android:name=".BasicActivity" />
-        <activity android:name=".CameraMain" />
-        <activity android:name=".ChatMain" />
-        <activity android:name=".HomePage" />
-        <activity
-            android:name=".SettingsMain"
-            android:label="@string/title_activity_settings_main"
-            android:theme="@style/AppTheme" />
+        <activity android:name=".EventMain"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".BasicActivity"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".CameraMain"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".ChatMain"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".HomePage"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".TheaterMain"
+            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".SettingsMain"
+            android:theme="@style/AppTheme"></activity>
+
         <activity
             android:name=".ArtworkViewMain"
             android:label="@string/title_activity_artwork_view_main"
