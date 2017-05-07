@@ -22,12 +22,9 @@ public class ItemTheater {
     public ItemTheater() {
     }
 
-    public ItemTheater(String price, String pledgePrice, String fromAddress, String toAddress, int requestsCount, String date, String time) {
-        this.price = price;
-        this.pledgePrice = pledgePrice;
+    public ItemTheater(String fromAddress, String toAddress, String date, String time) {
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
-        this.requestsCount = requestsCount;
         this.date = date;
         this.time = time;
     }
@@ -133,11 +130,8 @@ public class ItemTheater {
      */
     public static ArrayList<ItemTheater> getTestingList() {
         ArrayList<ItemTheater> items = new ArrayList<>();
-        items.add(new ItemTheater("$14", "$270", "W 79th St, NY, 10024", "W 139th St, NY, 10030", 3, "TODAY", "05:10 PM"));
-        items.add(new ItemTheater("$23", "$116", "W 36th St, NY, 10015", "W 114th St, NY, 10037", 10, "TODAY", "11:10 AM"));
-        items.add(new ItemTheater("$63", "$350", "W 36th St, NY, 10029", "56th Ave, NY, 10041", 0, "TODAY", "07:11 PM"));
-        items.add(new ItemTheater("$19", "$150", "12th Ave, NY, 10012", "W 57th St, NY, 10048", 8, "TODAY", "4:15 AM"));
-        items.add(new ItemTheater("$5", "$300", "56th Ave, NY, 10041", "W 36th St, NY, 10029", 0, "TODAY", "06:15 PM"));
+        items.add(new ItemTheater("Blanche / Katrina", "Mise en scène-Fabrice Gorgerat","Thu", "7:00 PM"));
+
         return items;
 
     }

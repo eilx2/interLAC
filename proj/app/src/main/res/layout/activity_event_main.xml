@@ -7,41 +7,6 @@
     tools:context="com.mun.minh_minhh.interlac.BasicActivity"
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="146dp"
-            android:layout_height="88dp"
-            android:layout_below="@+id/button"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
-            android:text="Music" />
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="146dp"
-            android:layout_height="88dp"
-            android:layout_alignStart="@+id/button5"
-            android:layout_marginTop="81dp"
-            android:text="Theater and Dance" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="146dp"
-            android:layout_height="88dp"
-            android:layout_alignStart="@+id/button5"
-            android:layout_below="@+id/button2"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="27dp"
-            android:text="Arts" />
-
-
-
-    </RelativeLayout>
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,6 +32,41 @@
         </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="146dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="28dp"
+            android:text="Music"
+            android:layout_below="@+id/button4"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="146dp"
+            android:layout_height="88dp"
+            android:layout_alignStart="@+id/button5"
+            android:layout_marginTop="81dp"
+            android:text="Theater and Dance" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="146dp"
+            android:layout_height="88dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="146dp"
+            android:text="Arts"
+            android:layout_below="@+id/button4"
+            android:layout_alignStart="@+id/button4" />
+
+
+    </RelativeLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>
