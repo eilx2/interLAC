@@ -28,11 +28,11 @@ public class HomePage extends BasicActivity {
         setContentView(R.layout.activity_home_page);
         circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
 
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"), R.mipmap.icon_menu, R.mipmap.icon_cancel)
-                .addSubMenu(Color.parseColor("#30A400"), R.mipmap.icon_search)
-                .addSubMenu(Color.parseColor("#FF4B32"), R.mipmap.icon_notify)
-                .addSubMenu(Color.parseColor("#8A39FF"), R.mipmap.icon_setting)
-                .addSubMenu(Color.parseColor("#FF6A00"), R.mipmap.icon_gps)
+        circleMenu.setMainMenu(Color.parseColor("#3F51B5"), R.drawable.ic_home, R.mipmap.icon_cancel)
+                .addSubMenu(Color.parseColor("#30A400"), R.drawable.ic_event)
+                .addSubMenu(Color.parseColor("#FF4B32"), R.drawable.ic_camera)
+                .addSubMenu(Color.parseColor("#8A39FF"), R.drawable.ic_chat)
+                .addSubMenu(Color.parseColor("#FF6A00"), R.drawable.ic_setting)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
 
                     @Override
