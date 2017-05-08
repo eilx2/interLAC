@@ -131,6 +131,7 @@ public class ItemTheater {
     public static ArrayList<ItemTheater> getTestingList() {
         ArrayList<ItemTheater> items = new ArrayList<>();
         items.add(new ItemTheater("Blanche / Katrina", "Mise en scène-Fabrice Gorgerat","Thu", "7:00 PM"));
+        items.add(new ItemTheater("Blanche / Katrina", "Mise en scène-Fabrice Gorgerat","Thu", "7:00 PM"));
 
         return items;
 
