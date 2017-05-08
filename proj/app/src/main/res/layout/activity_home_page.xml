@@ -20,16 +20,16 @@
             android:layout_marginTop="34dp"
             android:visibility="visible"
             app:srcCompat="@drawable/logo" />
+
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView"
-            android:text="Let's the journey begin"
             android:layout_centerHorizontal="true"
-            android:textSize="20dp"
             android:layout_marginTop="40dp"
-            />
+            android:text="Let the journey begin"
+            android:textSize="20dp" />
 
         <com.hitomi.cmlibrary.CircleMenu
             android:id="@+id/circle_menu"

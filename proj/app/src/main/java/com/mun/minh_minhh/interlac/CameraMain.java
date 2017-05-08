@@ -50,7 +50,11 @@ public class CameraMain extends BasicActivity{
         final Button button = (Button) findViewById(R.id.scan_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Server.writeReview(1,new Review("john","lol,shit",0,2));
+                //Server.writeReview(1,new Review("john","lol,shit",0,2));
+                Intent intent = new Intent(CameraMain.this, ArtworkViewMain.class);
+                intent.putExtra("id",1);
+                startActivity(intent);
+
             }
         });
     }
@@ -82,7 +86,7 @@ public class CameraMain extends BasicActivity{
 
 
 
-        preview.addView(mPreview);
+        preview.addView(mPreview,0);
     }
 
 

@@ -8,9 +8,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
+import android.util.Log;
 
 public class Server {
     private static final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    private final String TAG = "Server";
+
+    private Review reviewHolder;
 
     public Server() {
     }
@@ -24,22 +28,25 @@ public class Server {
         return 1;
     }
 
-    private int getReview(int id) {
+
+    private Review getReview(int id) {
         DatabaseReference mRef = mDatabase.child("/reviews/"+id);
+
+
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
+                reviewHolder = dataSnapshot.getValue(Review.class);
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.d(TAG, databaseError.toString());
             }
         });
 
 
-        return 1;
+        return null;
     }
 
     public static void writeReview(int artworkId, Review review) {

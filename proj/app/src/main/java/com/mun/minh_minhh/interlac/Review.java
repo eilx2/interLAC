@@ -5,6 +5,7 @@ package com.mun.minh_minhh.interlac;
  */
 
 public class Review {
+    //set to public to allow firebase access
     public String author,content;
     public int likes,dislikes;
 
