@@ -24,25 +24,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventMain"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".BasicActivity"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".CameraMain"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".ChatMain"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".HomePage"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".TheaterMain"
-            android:theme="@style/AppTheme"></activity>
-        <activity android:name=".SettingsMain"
-            android:theme="@style/AppTheme"></activity>
-
         <activity
-            android:name=".ArtworkViewMain"
+            android:name=".EventMain"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".BasicActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".CameraMain"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ChatMain"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".HomePage"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Events.Theater.TheaterMain"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SettingsMain"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Events.ArtworkViewMain"
             android:label="@string/title_activity_artwork_view_main"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".Events.Arts.ArtMain"></activity>
     </application>
 
 </manifest>

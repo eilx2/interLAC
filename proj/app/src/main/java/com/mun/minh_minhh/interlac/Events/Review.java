@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.Events;
 
 /**
  * Created by marcel on 05.05.17.

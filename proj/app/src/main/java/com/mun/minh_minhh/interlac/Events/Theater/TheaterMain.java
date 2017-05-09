@@ -1,15 +1,15 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.Events.Theater;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.Events.Theater.FoldingCellListAdapter;
+import com.mun.minh_minhh.interlac.Events.Theater.ItemTheater;
+import com.mun.minh_minhh.interlac.R;
 import com.ramotion.foldingcell.FoldingCell;
 
 import java.util.ArrayList;
@@ -29,8 +29,7 @@ public class TheaterMain extends BasicActivity {
         BottomNavHelp.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
-        menuItem.setChecked(true);
-*/
+        menuItem.setChecked(true);*/
         // get our list view
         ListView theListView = (ListView) findViewById(R.id.mainListView);
 
@@ -41,7 +40,7 @@ public class TheaterMain extends BasicActivity {
         items.get(0).setRequestBtnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "CUSTOM HANDLER FOR FIRST BUTTON", Toast.LENGTH_SHORT).show();
+
             }
         });
 

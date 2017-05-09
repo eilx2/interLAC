@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.mun.minh_minhh.interlac.ArtworkViewMain"
+    tools:context="com.mun.minh_minhh.interlac.Events.ArtworkViewMain"
     tools:showIn="@layout/activity_artwork_view_main">
 
 </android.support.constraint.ConstraintLayout>

@@ -1,12 +1,7 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.Events;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -14,8 +9,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
+import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.R;
 
 public class ArtworkViewMain extends BasicActivity {
     private int pictureId;

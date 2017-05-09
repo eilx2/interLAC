@@ -37,8 +37,12 @@ dependencies {
     compile 'com.google.firebase:firebase-auth:10.2.4'
     compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
     compile 'com.github.Hitomis:CircleMenu:v1.1.0'
+    compile 'com.alexvasilkov:foldable-layout:1.2.1'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.alexvasilkov:android-commons:1.2.4'
     testCompile 'junit:junit:4.12'
 }
+
 
 
 
