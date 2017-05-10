@@ -9,10 +9,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
+import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 
 public class EventMain extends BasicActivity {
     public Button button;
+
+
     public void init_theater_button(){
         button = (Button)findViewById(R.id.button4);
         button.setOnClickListener(new View.OnClickListener() {
@@ -24,6 +27,19 @@ public class EventMain extends BasicActivity {
         });
 
     }
+
+    public void init_music_button(){
+        button = (Button)findViewById(R.id.button5);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(EventMain.this, MusicMain.class);
+                startActivity(toy);
+            }
+        });
+
+    }
+
     public void init_art_button(){
         button = (Button)findViewById(R.id.button6);
         button.setOnClickListener(new View.OnClickListener() {
@@ -48,6 +64,7 @@ public class EventMain extends BasicActivity {
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
         init_theater_button();
+        init_music_button();
         init_art_button();
 
 

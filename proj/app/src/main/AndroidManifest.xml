@@ -46,10 +46,15 @@
             android:name=".SettingsMain"
             android:theme="@style/AppTheme" />
         <activity
+            android:name=".Events.Music.MusicMain"
+            android:theme="@style/AppTheme" />
+        <activity
             android:name=".Events.ArtworkViewMain"
             android:label="@string/title_activity_artwork_view_main"
             android:theme="@style/AppTheme" />
         <activity android:name=".Events.Arts.ArtMain"></activity>
+
+
     </application>
 
 </manifest>
