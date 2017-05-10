@@ -1,8 +1,5 @@
 package com.mun.minh_minhh.interlac.Events;
 
-/**
- * Created by marcel on 05.05.17.
- */
 
 public class Review {
     //set to public to allow firebase access

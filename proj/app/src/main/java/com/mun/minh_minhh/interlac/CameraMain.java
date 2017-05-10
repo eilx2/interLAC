@@ -100,4 +100,16 @@ public class CameraMain extends BasicActivity{
     private void getCameraPermission() {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA},1);
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mCamera.release();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
 }

@@ -37,7 +37,7 @@ public class ArtworkViewMain extends BasicActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 artwork = dataSnapshot.getValue(Artwork.class);
                 Log.d(TAG,dataSnapshot.toString());
-                draw(artwork);
+                artwork.draw(ArtworkViewMain.this);
             }
 
             @Override
@@ -48,9 +48,6 @@ public class ArtworkViewMain extends BasicActivity {
 
     }
 
-    private void draw(Artwork artwork) {
-        TextView textView = (TextView) findViewById(R.id.name);
-        textView.setText(artwork.name);
-    }
+
 
 }
