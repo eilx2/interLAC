@@ -21,7 +21,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="71dp"
-            android:text="Scan" />
+            android:text="Scan"
+            android:onClick="onClick"/>
 
     </RelativeLayout>
     <android.support.design.widget.AppBarLayout
