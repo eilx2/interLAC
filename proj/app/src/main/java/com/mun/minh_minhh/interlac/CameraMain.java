@@ -99,10 +99,10 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         //mScannerView.stopCamera();}
 
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mScannerView.stopCamera();}
+    //@Override
+    //protected void onPause() {
+     //   super.onPause();
+       // mScannerView.stopCamera();}
 
     //@Override
     //public void onResume() {
