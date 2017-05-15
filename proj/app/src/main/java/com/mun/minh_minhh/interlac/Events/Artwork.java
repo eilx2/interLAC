@@ -40,7 +40,7 @@ public class Artwork {
 
         ImageView imgView = (ImageView) activity.findViewById(R.id.picView);
         Log.d("Artwork",storageRef.getDownloadUrl().toString());
-        Picasso.with(activity.getApplicationContext()).load("https://firebasestorage.googleapis.com/v0/b/interlac-bb03f.appspot.com/o/lisa.jpg?alt=media&token=9ea1a26d-107c-46aa-bf47-c17e0767b2da").into(imgView);
+        Picasso.with(activity.getApplicationContext()).load("https://firebasestorage.googleapis.com/v0/b/interlac-bb03f.appspot.com/o/louvre-allegorie-fortune-fortuna-marina.jpg?alt=media&token=3b996773-b1f6-4bdf-bcd1-7debe5e8858f").into(imgView);
     }
 
 }
