@@ -130,8 +130,8 @@ public class MusicMain extends AppCompatActivity {
             super.onPostExecute(result);
             ListAdapter adapter;
             adapter = new SimpleAdapter(MusicMain.this, eventList,
-                    R.layout.list_item2, new String[]{ "title","category"},
-                    new int[]{R.id.title, R.id.category});
+                    R.layout.list_item2, new String[]{"title","subtitle", "from", "to"},
+                    new int[]{R.id.title, R.id.subtitle, R.id.from, R.id.to});
             lv.setAdapter(adapter);
         }
     }
