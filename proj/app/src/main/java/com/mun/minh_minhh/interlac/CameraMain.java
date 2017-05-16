@@ -19,6 +19,8 @@ import android.widget.Button;
 
 import com.google.zxing.Result;
 import com.mun.minh_minhh.interlac.Events.ArtworkViewMain;
+
+import me.dm7.barcodescanner.core.CameraWrapper;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
@@ -83,9 +85,13 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
 
     public void onClick(View v) {
         mScannerView = new ZXingScannerView(this);
+
         setContentView(mScannerView);
         mScannerView.setResultHandler(this);
+
         mScannerView.startCamera();
+
+
     }
 
 
@@ -107,22 +113,29 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     //    mScannerView.startCamera();
     //}
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+       // mScannerView.stopCameraPreview();
+      //  mScannerView.stopCamera();
 
+
+    }
 
     @Override
     public void handleResult(Result result) {
         //        // do whatever with result here!
         // this here sets a message popup to appear...
         Log.v("handleResult", result.getText());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scan result");
-        builder.setMessage(result.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+        Intent intent = new Intent(CameraMain.this, ArtworkViewMain.class);
+        intent.putExtra("id",result.getText());
+        startActivity(intent);
 
+        mScannerView.stopCameraPreview();
+        mScannerView.stopCamera();
         //Resume scanning
         // Uncomment the following line to allow scanning to resume again!
-        mScannerView.resumeCameraPreview(this);
+      //  mScannerView.resumeCameraPreview(this);
     }
 
 
