@@ -15,4 +15,5 @@ public class Review {
         this.likes = likes;
         this.dislikes = dislikes;
     }
+
 }

@@ -1,7 +1,5 @@
 package com.mun.minh_minhh.interlac;
 
-
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +20,6 @@ import android.widget.Button;
 import com.google.zxing.Result;
 import com.mun.minh_minhh.interlac.Events.ArtworkViewMain;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
-
 
 /**
  * Created by holenr on 13.05.2017
@@ -52,7 +49,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
 //    }
 
     private void initScanButton() {
-        final Button button = (Button) findViewById(R.id.scan_button);
+        final Button button = (Button) findViewById(R.id.testButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Server.writeReview(1,new Review("john","lol,shit",0,2));
@@ -81,7 +78,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
 
-        //initScanButton();
+        initScanButton();
     }
 
     public void onClick(View v) {
@@ -102,7 +99,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     @Override
     protected void onPause() {
         super.onPause();
-        mScannerView.stopCamera();}
+       }
 
     //@Override
     //public void onResume() {
