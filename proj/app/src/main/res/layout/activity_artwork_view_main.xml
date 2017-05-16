@@ -10,42 +10,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        android:weightSum="1">
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="413dp"
+            android:layout_width="match_parent"
             android:layout_height="259dp"
             android:orientation="horizontal"
-            android:weightSum="1">
+            android:weightSum="2">
 
             <ImageView
                 android:id="@+id/picView"
-                android:layout_width="201dp"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="252dp"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/cafe_terrace" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="306dp"
-                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/name"
-                    android:layout_width="191dp"
+                    android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:layout_marginLeft="8dp"
                     android:text="Title"
                     android:textAlignment="center"
                     android:textSize="24sp"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    tools:layout_editor_absoluteY="35dp"
+                    tools:layout_editor_absoluteY="125dp"
                     android:layout_marginStart="8dp" />
 
                 <TextView
                     android:id="@+id/description"
-                    android:layout_width="189dp"
+                    android:layout_width="match_parent"
                     android:layout_height="202dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="8dp"
@@ -57,7 +59,7 @@
                     app:layout_constraintVertical_bias="0.571"
                     android:layout_marginStart="8dp" />
 
-            </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
 
         </LinearLayout>
 
