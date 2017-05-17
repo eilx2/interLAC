@@ -1,7 +1,5 @@
 package com.mun.minh_minhh.interlac;
 
-
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -21,8 +19,9 @@ import android.widget.Button;
 
 import com.google.zxing.Result;
 import com.mun.minh_minhh.interlac.Events.ArtworkViewMain;
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
+import me.dm7.barcodescanner.core.CameraWrapper;
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
  * Created by holenr on 13.05.2017
@@ -52,7 +51,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
 //    }
 
     private void initScanButton() {
-        final Button button = (Button) findViewById(R.id.scan_button);
+        final Button button = (Button) findViewById(R.id.testButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Server.writeReview(1,new Review("john","lol,shit",0,2));
@@ -81,14 +80,18 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         MenuItem menuItem = menu.getItem(2);
         menuItem.setChecked(true);
 
-        //initScanButton();
+        initScanButton();
     }
 
     public void onClick(View v) {
         mScannerView = new ZXingScannerView(this);
+
         setContentView(mScannerView);
         mScannerView.setResultHandler(this);
+
         mScannerView.startCamera();
+
+
     }
 
 
@@ -102,7 +105,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     @Override
     protected void onPause() {
         super.onPause();
-        mScannerView.stopCamera();}
+       }
 
     //@Override
     //public void onResume() {
@@ -110,22 +113,29 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     //    mScannerView.startCamera();
     //}
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+       // mScannerView.stopCameraPreview();
+      //  mScannerView.stopCamera();
 
+
+    }
 
     @Override
     public void handleResult(Result result) {
         //        // do whatever with result here!
         // this here sets a message popup to appear...
         Log.v("handleResult", result.getText());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scan result");
-        builder.setMessage(result.getText());
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+        Intent intent = new Intent(CameraMain.this, ArtworkViewMain.class);
+        intent.putExtra("id",result.getText());
+        startActivity(intent);
 
+        mScannerView.stopCameraPreview();
+        mScannerView.stopCamera();
         //Resume scanning
         // Uncomment the following line to allow scanning to resume again!
-        mScannerView.resumeCameraPreview(this);
+      //  mScannerView.resumeCameraPreview(this);
     }
 
 

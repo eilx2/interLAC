@@ -4,17 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mun.minh_minhh.interlac.BasicActivity"
+
     >
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="@color/colorWhite">
+        android:background="@color/colorWhite"
+        android:id="@+id/topBar">
 
 
         <RelativeLayout
-            android:id="@+id/topBar"
+
             android:layout_width="match_parent"
             android:layout_height="50dp">
             <ImageView
@@ -34,11 +37,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorGrey">
+        android:background="@color/colorGrey"
+        android:id="@+id/bottomBar">
 
 
         <RelativeLayout
-            android:id="@+id/bottomBar"
+
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
@@ -56,5 +60,47 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.design.widget.FloatingActionButton
+            android:background="@color/colorPrimary"
+            android:id="@+id/hoho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:clickable="true"
+            android:src="@drawable/ic_send"
+            android:tint="@android:color/white"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/colorPrimary"/>
+
+        <EditText
+            android:id="@+id/user_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/hoho"
+            android:hint="Enter the message"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/colorPrimary"/>
+
+        <ListView
+            android:layout_marginTop="50dp"
+            android:id="@+id/list_of_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/hoho"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="20dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll"/>
+
+    </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>
