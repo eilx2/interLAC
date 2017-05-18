@@ -13,5 +13,6 @@
     <string name="content_from1_mock"></string>
     <string name="content_from2_mock"></string>
     <string name="content_to1_mock">7:00 PM</string>
+    <string name="simsimi_api">bfa49abc-ebbb-4357-9546-c1dab87ae05c</string>
     <string name="content_to2_mock"></string>
 </resources>

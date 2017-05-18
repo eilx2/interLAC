@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:cacheColorHint="@android:color/transparent"
         android:clipToPadding="false"
-        android:divider="@android:color/transparent"
+        android:divider="@color/colorWhite"
         android:dividerHeight="12dp"
         android:fadeScrollbars="true"
         android:listSelector="@android:color/transparent"
@@ -24,7 +24,7 @@
         android:id="@+id/details_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#333"
+        android:background="@color/colorWhite"
         android:orientation="vertical">
 
         <ImageView
