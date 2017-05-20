@@ -37,7 +37,7 @@ public class ReviewPage extends AppCompatActivity {
         String reviewContent = ((EditText) findViewById(R.id.editReview)).getText().toString();
 
         if (authorName.equals("") || reviewContent.equals("")) {
-            Toast.makeText(this,"The name and the review must be non-empty!",2);
+            Toast.makeText(this,"The name and the review must be non-empty!", Toast.LENGTH_LONG);
             return false;
         }
 

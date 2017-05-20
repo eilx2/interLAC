@@ -17,12 +17,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.R;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -94,14 +97,24 @@ public class ArtworkViewMain extends BasicActivity {
     private void loadPictureAndDrawInterface() {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         final StorageReference storageRef = storage.getReference(artwork.pictureName);
+        final File localFile;
 
-        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        try {
+            localFile = File.createTempFile("images", "jpg");
+        }
+        catch (IOException e) {
+            drawInterface();
+            attachReviewsListener();
+            return;
+        }
+
+        storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
             @Override
-            public void onSuccess(Uri uri) {
+            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                 drawInterface();
 
                 ImageView imgView = (ImageView) findViewById(R.id.picView);
-                Picasso.with(getApplicationContext()).load(uri.toString()).into(imgView);
+                Picasso.with(getApplicationContext()).load(localFile).into(imgView);
 
                 attachReviewsListener();
             }
