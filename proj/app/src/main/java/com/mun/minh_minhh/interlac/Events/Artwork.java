@@ -38,25 +38,4 @@ public class Artwork {
         this.review_list = review_list;
     }
 
-    public void draw(final Activity activity) {
-
-
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference(this.pictureName);
-
-        storageRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                ImageView imgView = (ImageView) activity.findViewById(R.id.picView);
-                Picasso.with(activity.getApplicationContext()).load(uri.toString()).into(imgView);
-            }
-        });
-
-
-    }
-
-
-
-
-
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
@@ -78,6 +79,11 @@ public class HomePage extends BasicActivity {
         init_camera_button();
         init_chat_button();*/
 
+
+    }
+
+    private void signIn() {
+        final String android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
     }
 }

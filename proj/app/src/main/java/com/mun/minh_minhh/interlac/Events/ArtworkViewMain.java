@@ -1,8 +1,11 @@
 package com.mun.minh_minhh.interlac.Events;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -75,6 +78,16 @@ public class ArtworkViewMain extends BasicActivity {
 
         TextView descriptionView = (TextView) findViewById(R.id.description);
         descriptionView.setText(artwork.description);
+
+        Button reviewButton = (Button) findViewById(R.id.reviewButton);
+        reviewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ArtworkViewMain.this,ReviewPage.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void loadPictureAndDrawInterface() {
