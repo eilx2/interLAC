@@ -84,6 +84,7 @@ public class ArtworkViewMain extends BasicActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ArtworkViewMain.this,ReviewPage.class);
+                intent.putExtra("id",pictureId);
                 startActivity(intent);
             }
         });

@@ -33,6 +33,7 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 
         TextView author = (TextView) convertView.findViewById(R.id.review_author);
         author.setText(review.author);
+
         return convertView;
     }
 }
