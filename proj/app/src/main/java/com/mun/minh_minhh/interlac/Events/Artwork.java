@@ -24,24 +24,22 @@ public class Artwork {
     //set to public to allow Firebase access
     public String name, author, pictureName, description;
     public int year;
+    ArrayList<String> review_list;
 
     public Artwork() {
     }
 
-    public Artwork(String author, String name, String picture, int year, String description, ArrayList<Review> review_list) {
+    public Artwork(String author, String name, String picture, int year, String description, ArrayList<String> review_list) {
         this.author = author;
         this.name = name;
         this.pictureName = picture;
         this.year = year;
         this.description = description;
+        this.review_list = review_list;
     }
 
     public void draw(final Activity activity) {
-        TextView nameView = (TextView) activity.findViewById(R.id.name);
-        nameView.setText(this.name);
 
-        TextView descriptionView = (TextView) activity.findViewById(R.id.description);
-        descriptionView.setText(this.description);
 
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference(this.pictureName);
