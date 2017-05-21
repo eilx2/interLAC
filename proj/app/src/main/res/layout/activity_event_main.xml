@@ -68,11 +68,11 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="28dp"
             android:text="Music"
-            android:layout_below="@+id/button4"
+            android:layout_below="@+id/testbut"
             android:layout_centerHorizontal="true" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/testbut"
             android:layout_width="146dp"
             android:layout_height="88dp"
             android:layout_alignStart="@+id/button5"
@@ -86,8 +86,8 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="146dp"
             android:text="Arts"
-            android:layout_below="@+id/button4"
-            android:layout_alignStart="@+id/button4" />
+            android:layout_below="@+id/testbut"
+            android:layout_alignStart="@+id/testbut" />
 
 
 

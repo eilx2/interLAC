@@ -2,16 +2,13 @@ package com.mun.minh_minhh.interlac;
 
 import android.content.Intent;
 import android.graphics.Color;
+
 import android.os.Bundle;
-import android.os.Handler;
+
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+
 import android.widget.Button;
-import android.util.Log;
+
 
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
@@ -27,6 +24,13 @@ public class HomePage extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        initCircleMenu();
+
+
+    }
+
+    private void initCircleMenu() {
         circleMenu = (CircleMenu) findViewById(R.id.circle_menu);
 
         circleMenu.setMainMenu(Color.parseColor("#3F51B5"), R.drawable.ic_home, R.mipmap.icon_cancel)
@@ -72,18 +76,14 @@ public class HomePage extends BasicActivity {
 
 
         });
-
-
-        /*button
-        init_events_button();
-        init_camera_button();
-        init_chat_button();*/
-
-
     }
+
+
 
     private void signIn() {
         final String android_id = Settings.Secure.getString(this.getContentResolver(), Settings.Secure.ANDROID_ID);
 
     }
+
+
 }
