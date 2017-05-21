@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,16 +36,18 @@ public class ReviewPage extends AppCompatActivity {
     private boolean postReview() {
         String authorName = ((EditText) findViewById(R.id.editName)).getText().toString();
         String reviewContent = ((EditText) findViewById(R.id.editReview)).getText().toString();
+        float rating = ((RatingBar) findViewById(R.id.ratingBar)).getRating();
 
         if (authorName.equals("") || reviewContent.equals("")) {
-            Toast.makeText(this,"The name and the review must be non-empty!", Toast.LENGTH_LONG);
+            Toast.makeText(this,"Please complete all fields.", Toast.LENGTH_LONG).show();
             return false;
         }
 
-        Review review = new Review(authorName, reviewContent, 0, 0);
+        Review review = new Review(authorName, reviewContent, 0, 0, rating);
         DatabaseReference mRef = mDatabase.child("/reviews");
         mRef = mRef.push();
         mRef.setValue(review);
+
 
         String reviewId = mRef.getKey();
         mRef = mDatabase.child("/artworks/"+pictureId + "/review_list");
