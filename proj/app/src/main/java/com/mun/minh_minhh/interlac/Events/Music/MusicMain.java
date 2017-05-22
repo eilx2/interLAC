@@ -1,6 +1,6 @@
 package com.mun.minh_minhh.interlac.Events.Music;
 
-        import android.os.AsyncTask;
+import android.os.AsyncTask;
         import android.os.Bundle;
         import android.support.v7.app.AppCompatActivity;
         import android.util.Log;
@@ -24,6 +24,8 @@ public class MusicMain extends AppCompatActivity {
 
     private String TAG = MusicMain.class.getSimpleName();
     private ListView lv;
+    private MusicEventAdapter adapter;
+    private ArrayList<MusicEvent> musicEvents;
 
     ArrayList<HashMap<String, String>> eventList;
 
@@ -33,7 +35,9 @@ public class MusicMain extends AppCompatActivity {
         setContentView(R.layout.music_main);
 
         eventList = new ArrayList<>();
+        musicEvents = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
+
 
         new GetEvents().execute();
     }
@@ -79,22 +83,9 @@ public class MusicMain extends AppCompatActivity {
                         String picture = item.getString("item_main_picture");
                         String text = item.getString("item_text");
 
-                        // tmp hash map for single event
-                        HashMap<String, String> eventMap = new HashMap<>();
+                        MusicEvent musicEvent = new MusicEvent(id,title,subtitle,category,from,to,picture,text);
+                        musicEvents.add(musicEvent);
 
-                        // adding each child node to HashMap key => value
-                        eventMap.put("id", id);
-                        eventMap.put("title", title);
-                        eventMap.put("subtitle", subtitle);
-                        eventMap.put("category", category);
-                        eventMap.put("from", from);
-                        eventMap.put("to", to);
-                        eventMap.put("picture", picture);
-                        eventMap.put("text", text);
-                        eventMap.put("picture2", Integer.toString(Pics[i]));
-
-                        // adding contact to contact list
-                        eventList.add(eventMap);
                     }
                 } catch (final JSONException e) {
                     Log.e(TAG, "An error has occured: " + e.getMessage());
@@ -127,11 +118,7 @@ public class MusicMain extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-
-            ListAdapter adapter;
-            adapter = new SimpleAdapter(MusicMain.this, eventList,
-                    R.layout.list_item2, new String[]{"picture2","title","subtitle", "from", "to"},
-                    new int[]{R.id.evt_img, R.id.title, R.id.subtitle, R.id.from, R.id.to});
+            adapter = new MusicEventAdapter(MusicMain.this, musicEvents);
             lv.setAdapter(adapter);
         }
     }
