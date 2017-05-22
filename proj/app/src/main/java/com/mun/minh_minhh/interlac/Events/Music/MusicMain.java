@@ -2,16 +2,20 @@ package com.mun.minh_minhh.interlac.Events.Music;
 
 import android.os.AsyncTask;
         import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AppCompatActivity;
         import android.util.Log;
-        import android.widget.ImageView;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ImageView;
         import android.widget.ListAdapter;
         import android.widget.ListView;
         import android.widget.SimpleAdapter;
         import android.widget.Toast;
 
         import com.mun.minh_minhh.interlac.BasicActivity;
-        import com.mun.minh_minhh.interlac.R;
+import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.mun.minh_minhh.interlac.R;
 
         import org.json.JSONArray;
         import org.json.JSONException;
@@ -20,7 +24,7 @@ import android.os.AsyncTask;
         import java.util.ArrayList;
         import java.util.HashMap;
 
-public class MusicMain extends AppCompatActivity {
+public class MusicMain extends BasicActivity {
 
     private String TAG = MusicMain.class.getSimpleName();
     private ListView lv;
@@ -33,6 +37,13 @@ public class MusicMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.music_main);
+        super.initBottomNavigation();
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
 
         eventList = new ArrayList<>();
         musicEvents = new ArrayList<>();

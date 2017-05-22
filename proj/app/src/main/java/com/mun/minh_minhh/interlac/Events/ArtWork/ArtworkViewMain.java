@@ -1,7 +1,6 @@
-package com.mun.minh_minhh.interlac.Events;
+package com.mun.minh_minhh.interlac.Events.ArtWork;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +20,9 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.Events.Reviews.Review;
+import com.mun.minh_minhh.interlac.Events.Reviews.ReviewAdapter;
+import com.mun.minh_minhh.interlac.Events.Reviews.ReviewPage;
 import com.mun.minh_minhh.interlac.R;
 import com.squareup.picasso.Picasso;
 

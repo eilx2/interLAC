@@ -28,7 +28,8 @@
         </activity>
         <activity
             android:name=".EventMain"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+            android:uiOptions="splitActionBarWhenNarrow"/>
         <activity
             android:name=".BasicActivity"
             android:theme="@style/AppTheme" />
@@ -56,13 +57,14 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Events.Music.MusicMain"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme"
+           />
         <activity
-            android:name=".Events.ArtworkViewMain"
+            android:name=".Events.ArtWork.ArtworkViewMain"
             android:label="@string/title_activity_artwork_view_main"
             android:theme="@style/AppTheme" />
         <activity android:name=".Events.Arts.ArtMain" />
-        <activity android:name=".Events.ReviewPage"></activity>
+        <activity android:name=".Events.Reviews.ReviewPage"></activity>
     </application>
 
 </manifest>

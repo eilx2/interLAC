@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mun.minh_minhh.interlac.Events.ArtworkViewMain">
+    tools:context="com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain">
 
     <LinearLayout
         android:layout_width="match_parent"

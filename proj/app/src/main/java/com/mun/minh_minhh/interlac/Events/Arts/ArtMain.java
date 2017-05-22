@@ -1,8 +1,10 @@
 package com.mun.minh_minhh.interlac.Events.Arts;
 
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
+import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -11,12 +13,14 @@ import android.widget.TextView;
 import com.alexvasilkov.android.commons.texts.SpannableBuilder;
 import com.alexvasilkov.android.commons.utils.Views;
 import com.alexvasilkov.foldablelayout.UnfoldableView;
+import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.BottomNavHelp;
 import com.mun.minh_minhh.interlac.R;
 import com.mun.minh_minhh.interlac.Events.Arts.items.Painting;
 import com.mun.minh_minhh.interlac.Events.Arts.items.PaintingsAdapter;
 import com.mun.minh_minhh.interlac.Events.Arts.utils.GlideHelper;
 
-public class ArtMain extends AppCompatActivity {
+public class ArtMain extends BasicActivity {
 
     private ListView mListView;
     private View mListTouchInterceptor;
@@ -26,7 +30,14 @@ public class ArtMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_unfoldable_details);
+        setContentView(R.layout.activity_art_main);
+        super.initBottomNavigation();
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
 
         mListView = (ListView) findViewById(R.id.list_view);
         mListView.setAdapter(new PaintingsAdapter(this));

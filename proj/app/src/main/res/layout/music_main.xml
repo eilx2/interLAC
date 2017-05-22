@@ -1,12 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@color/colorWhite">
 
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/border_top">
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Music"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorGrey">
+
+
+        <RelativeLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <android.support.design.widget.BottomNavigationView
+                android:id="@+id/bottomNav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_bottom"
+                app:menu="@menu/navigation">
+
+            </android.support.design.widget.BottomNavigationView>
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp"/>
-</RelativeLayout>
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"/>
+</android.support.design.widget.CoordinatorLayout>

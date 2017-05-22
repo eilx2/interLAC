@@ -6,13 +6,5 @@
     <string name="scan_text">Scan</string>
     <string name="title_activity_settings_main">SettingsMain</string>
     <string name="title_activity_artwork_view_main">ArtworkViewMain</string>
-    <string name="rating_mock" translatable="false">(26)</string>
-    <string name="delivery_time_mock" translatable="false">6:30 pm</string>
-    <string name="delivery_date_mock" translatable="false">May 16, 2016</string>
-    <string name="btn_annotation_mock" translatable="false">5 people have sent a request</string>
-    <string name="content_from1_mock"></string>
-    <string name="content_from2_mock"></string>
-    <string name="content_to1_mock">7:00 PM</string>
     <string name="simsimi_api">bfa49abc-ebbb-4357-9546-c1dab87ae05c</string>
-    <string name="content_to2_mock"></string>
 </resources>

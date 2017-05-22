@@ -5,8 +5,9 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:text="Please wait..."
         android:textSize="30sp" />
 </LinearLayout>

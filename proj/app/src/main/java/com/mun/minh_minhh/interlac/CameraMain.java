@@ -2,27 +2,20 @@ package com.mun.minh_minhh.interlac;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.google.zxing.Result;
-import com.mun.minh_minhh.interlac.Events.ArtworkViewMain;
+import com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain;
 
 import me.dm7.barcodescanner.core.IViewFinder;
 import me.dm7.barcodescanner.core.ViewFinderView;
@@ -39,6 +32,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capture_layout);
+
 
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
         mScannerView = new ZXingScannerView(this) {
