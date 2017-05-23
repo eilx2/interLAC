@@ -17,7 +17,7 @@ public class EventMain extends BasicActivity {
 
 
     public void init_theater_button(){
-        button = (Button)findViewById(R.id.button4);
+        button = (Button)findViewById(R.id.testbut);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -15,7 +15,7 @@ public  class BasicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-    void initBottomNavigation() {
+    public void initBottomNavigation() {
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         BottomNavHelp.disableShiftMode(bottomNavigationView);
 

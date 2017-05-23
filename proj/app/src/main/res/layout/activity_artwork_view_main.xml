@@ -4,80 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mun.minh_minhh.interlac.Events.ArtworkViewMain">
+    tools:context="com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
         android:orientation="vertical">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@color/colorWhite">
+
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/logo" />
+
+
+            </RelativeLayout>
+
+        </android.support.design.widget.AppBarLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="259dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <ImageView
-                android:id="@+id/picView"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="252dp"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/cafe_terrace" />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="259dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
 
-                <TextView
-                    android:id="@+id/name"
+                <ImageView
+                    android:id="@+id/picView"
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:text="Title"
-                    android:textAlignment="center"
-                    android:textSize="24sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    tools:layout_editor_absoluteY="125dp"
-                    android:layout_marginStart="8dp" />
+                    android:layout_height="252dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/cafe_terrace" />
 
-                <TextView
-                    android:id="@+id/description"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="202dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="18dp"
-                    android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/name"
-                    app:layout_constraintVertical_bias="0.571"
-                    android:layout_marginStart="8dp" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="8dp"
+                        android:text="Title"
+                        android:textAlignment="center"
+                        android:textSize="24sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        tools:layout_editor_absoluteY="125dp" />
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="202dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="18dp"
+                        android:text="TextView"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/name"
+                        app:layout_constraintVertical_bias="0.571" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_weight="0.24"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Reviews"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
+                    tools:layout_editor_absoluteX="-169dp"
+                    tools:layout_editor_absoluteY="249dp" />
+
+                <Button
+                    android:id="@+id/reviewButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Write review" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/reviewList"
+                android:layout_width="match_parent"
+                android:layout_height="297dp" />
+
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.37"
-            android:text="Reviews"
-            android:textAlignment="center"
-            android:textSize="25sp"
-            tools:layout_editor_absoluteX="-169dp"
-            tools:layout_editor_absoluteY="249dp" />
-
-        <ListView
-            android:id="@+id/reviewList"
-            android:layout_width="match_parent"
-            android:layout_height="327dp" />
 
     </LinearLayout>
 

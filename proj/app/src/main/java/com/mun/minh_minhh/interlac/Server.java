@@ -7,7 +7,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.mun.minh_minhh.interlac.Events.Review;
+import com.mun.minh_minhh.interlac.Events.Reviews.Review;
 
 import android.util.Log;
 

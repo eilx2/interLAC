@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -13,11 +14,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:screenOrientation="portrait">
-
-
+        android:theme="@style/AppTheme">
         <activity
             android:name=".SplashPage"
             android:label="@string/app_name">
@@ -27,55 +26,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".EventMain"
-            android:theme="@style/AppTheme" />
-
+            android:theme="@style/AppTheme"
+            android:uiOptions="splitActionBarWhenNarrow"/>
         <activity
             android:name=".BasicActivity"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".CameraMain"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ChatMain"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".HomePage"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Events.Theater.TheaterMain"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".SettingsMain"
             android:theme="@style/AppTheme" />
-
         <activity
             android:name=".Events.Music.MusicMain"
-            android:theme="@style/AppTheme" />
-
+            android:theme="@style/AppTheme"
+           />
         <activity
-            android:name=".Events.ArtworkViewMain"
+            android:name=".Events.ArtWork.ArtworkViewMain"
             android:label="@string/title_activity_artwork_view_main"
             android:theme="@style/AppTheme" />
-
-        <activity android:name=".Events.Arts.ArtMain"></activity>
-
-
-
-
+        <activity android:name=".Events.Arts.ArtMain" />
+        <activity android:name=".Events.Reviews.ReviewPage"></activity>
     </application>
 
 </manifest>
