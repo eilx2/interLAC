@@ -1,11 +1,13 @@
 package com.mun.minh_minhh.interlac.Events.Arts;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -15,6 +17,9 @@ import com.alexvasilkov.android.commons.utils.Views;
 import com.alexvasilkov.foldablelayout.UnfoldableView;
 import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.mun.minh_minhh.interlac.EventMain;
+import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
+import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 import com.mun.minh_minhh.interlac.R;
 import com.mun.minh_minhh.interlac.Events.Arts.items.Painting;
 import com.mun.minh_minhh.interlac.Events.Arts.items.PaintingsAdapter;
@@ -26,6 +31,36 @@ public class ArtMain extends BasicActivity {
     private View mListTouchInterceptor;
     private View mDetailsLayout;
     private UnfoldableView mUnfoldableView;
+    public Button button;
+
+
+    public void init_theater_button(){
+        button = (Button)findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(ArtMain.this, TheaterMain.class);
+                startActivity(toy);
+            }
+        });
+
+    }
+
+    public void init_music_button(){
+        button = (Button)findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(ArtMain.this, MusicMain.class);
+                startActivity(toy);
+            }
+        });
+
+    }
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +73,8 @@ public class ArtMain extends BasicActivity {
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
+        init_music_button();
+        init_theater_button();
 
         mListView = (ListView) findViewById(R.id.list_view);
         mListView.setAdapter(new PaintingsAdapter(this));

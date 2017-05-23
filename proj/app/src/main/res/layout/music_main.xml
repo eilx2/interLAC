@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,8 +28,61 @@
                 android:text="Music"
                 android:textSize="18dp" />
         </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Theater/Dance"
+                    android:background="@drawable/btn_bg"
+                    android:textColor="@drawable/text_col"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Music"
+                    android:background="@drawable/btn_bg"
+                    android:textColor="@drawable/text_col"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Art"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/btn_bg"
+                    android:textColor="@drawable/text_col"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
 
     </android.support.design.widget.AppBarLayout>
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -54,11 +108,12 @@
 
         </RelativeLayout>
 
+
     </android.support.design.widget.AppBarLayout>
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
-        android:paddingTop="50dp"/>
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="100dp"/>
 </android.support.design.widget.CoordinatorLayout>

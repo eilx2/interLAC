@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
+import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 
 public class HomePage extends BasicActivity {
 
@@ -57,7 +58,7 @@ public class HomePage extends BasicActivity {
             public void onMenuSelected(int i) {
                 switch (i){
                     case 0:
-                        startActivity(new Intent(HomePage.this,EventMain.class));
+                        startActivity(new Intent(HomePage.this,TheaterMain.class));
                         break;
                     case 1:
                         startActivity(new Intent(HomePage.this,CameraMain.class));

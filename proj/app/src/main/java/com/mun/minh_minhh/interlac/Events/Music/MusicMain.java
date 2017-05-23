@@ -1,5 +1,6 @@
 package com.mun.minh_minhh.interlac.Events.Music;
 
+import android.content.Intent;
 import android.os.AsyncTask;
         import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
         import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
         import android.widget.ListAdapter;
         import android.widget.ListView;
@@ -15,6 +18,9 @@ import android.widget.ImageView;
 
         import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.mun.minh_minhh.interlac.EventMain;
+import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
+import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 import com.mun.minh_minhh.interlac.R;
 
         import org.json.JSONArray;
@@ -32,6 +38,34 @@ public class MusicMain extends BasicActivity {
     private ArrayList<MusicEvent> musicEvents;
 
     ArrayList<HashMap<String, String>> eventList;
+    public Button button;
+
+
+    public void init_theater_button(){
+        button = (Button)findViewById(R.id.button1);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(MusicMain.this, TheaterMain.class);
+                startActivity(toy);
+            }
+        });
+
+    }
+
+
+
+    public void init_art_button(){
+        button = (Button)findViewById(R.id.button3);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent toy = new Intent(MusicMain.this, ArtMain.class);
+                startActivity(toy);
+            }
+        });
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +73,14 @@ public class MusicMain extends BasicActivity {
         setContentView(R.layout.music_main);
         super.initBottomNavigation();
 
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         BottomNavHelp.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
+        init_theater_button();
+        init_art_button();
 
         eventList = new ArrayList<>();
         musicEvents = new ArrayList<>();
