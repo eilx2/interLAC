@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
+
 public  class BasicActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,7 @@ public  class BasicActivity extends AppCompatActivity {
                     case R.id.ic_event:
                         if (BasicActivity.this instanceof EventMain)
                             return true;
-                        startActivity(new Intent(BasicActivity.this,EventMain.class));
+                        startActivity(new Intent(BasicActivity.this,TheaterMain.class));
                         break;
                     case R.id.ic_camera:
                         if (BasicActivity.this instanceof CameraMain)
