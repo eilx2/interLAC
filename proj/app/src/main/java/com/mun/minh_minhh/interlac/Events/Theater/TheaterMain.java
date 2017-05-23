@@ -69,7 +69,7 @@ public class TheaterMain extends BasicActivity {public Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.music_main);
+        setContentView(R.layout.event_layout);
         super.initBottomNavigation();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
@@ -100,7 +100,7 @@ public class TheaterMain extends BasicActivity {public Button button;
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/20/2017";
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/24/2017";
             String jsonStrUncut = sh.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
