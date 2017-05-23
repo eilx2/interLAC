@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.os.Bundle;
 
 import android.util.AttributeSet;
@@ -71,7 +72,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
 
     //class for drawing over scanner
     private static class CustomViewFinderView extends ViewFinderView {
-        public static final String TRADE_MARK_TEXT = "ZXing";
+        public static final String TRADE_MARK_TEXT = "eXpats";
         public static final int TRADE_MARK_TEXT_SIZE_SP = 40;
         public final Paint PAINT = new Paint();
 
@@ -97,8 +98,23 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         @Override
         public void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-
+            drawTradeMark(canvas);
         }
+
+        private void drawTradeMark(Canvas canvas) {
+            Rect framingRect = getFramingRect();
+            float tradeMarkTop;
+            float tradeMarkLeft;
+            if (framingRect != null) {
+                tradeMarkTop = framingRect.bottom + PAINT.getTextSize() + 10;
+                tradeMarkLeft = framingRect.left;
+            } else {
+                tradeMarkTop = 10;
+                tradeMarkLeft = canvas.getHeight() - PAINT.getTextSize() - 10;
+            }
+            canvas.drawText(TRADE_MARK_TEXT, tradeMarkLeft, tradeMarkTop, PAINT);
+        }
+
 
     }
 
