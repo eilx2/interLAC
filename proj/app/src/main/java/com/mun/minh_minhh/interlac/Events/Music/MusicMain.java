@@ -4,23 +4,21 @@ import android.content.Intent;
 import android.os.AsyncTask;
         import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-        import android.util.Log;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-        import android.widget.ListAdapter;
-        import android.widget.ListView;
-        import android.widget.SimpleAdapter;
-        import android.widget.Toast;
+import android.widget.ListView;
+import android.widget.Toast;
 
         import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.BottomNavHelp;
-import com.mun.minh_minhh.interlac.EventMain;
 import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
+import com.mun.minh_minhh.interlac.Events.EventAdapter;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
+import com.mun.minh_minhh.interlac.Events.HttpHandler;
+import com.mun.minh_minhh.interlac.Events.Event;
 import com.mun.minh_minhh.interlac.R;
 
         import org.json.JSONArray;
@@ -34,8 +32,8 @@ public class MusicMain extends BasicActivity {
 
     private String TAG = MusicMain.class.getSimpleName();
     private ListView lv;
-    private MusicEventAdapter adapter;
-    private ArrayList<MusicEvent> musicEvents;
+    private EventAdapter adapter;
+    private ArrayList<Event> musicEvents;
 
     ArrayList<HashMap<String, String>> eventList;
     public Button button;
@@ -102,12 +100,10 @@ public class MusicMain extends BasicActivity {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=06/15/2017";
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/20/2017";
             String jsonStrUncut = sh.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
-            int[] Pics = new int[] {R.drawable.a,R.drawable.second, R.drawable.b,  R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f,
-                    R.drawable.g, R.drawable.h, R.drawable.i};
 
             Log.e(TAG, "Response from url: " + jsonStr);
             if (jsonStr != null) {
@@ -131,8 +127,11 @@ public class MusicMain extends BasicActivity {
                         String picture = item.getString("item_main_picture");
                         String text = item.getString("item_text");
 
-                        MusicEvent musicEvent = new MusicEvent(id,title,subtitle,category,from,to,picture,text);
-                        musicEvents.add(musicEvent);
+                        Event musicEvent = new Event(id,title,subtitle,category,from,to,picture,text);
+
+                       if(category.equals("Musica"))
+                           musicEvents.add(musicEvent);
+
 
                     }
                 } catch (final JSONException e) {
@@ -166,7 +165,7 @@ public class MusicMain extends BasicActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            adapter = new MusicEventAdapter(MusicMain.this, musicEvents);
+            adapter = new EventAdapter(MusicMain.this, musicEvents);
             lv.setAdapter(adapter);
         }
     }

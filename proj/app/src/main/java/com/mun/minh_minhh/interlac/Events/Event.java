@@ -1,14 +1,14 @@
-package com.mun.minh_minhh.interlac.Events.Music;
+package com.mun.minh_minhh.interlac.Events;
 
 /**
  * Created by marcel on 22.05.17.
  */
 
-public class MusicEvent {
+public class Event {
     private String id, title, subtitle, category, date_from, date_to, picture, text;
 
 
-    public MusicEvent(String id, String title, String subtitle, String category, String date_from, String date_to, String picture, String text) {
+    public Event(String id, String title, String subtitle, String category, String date_from, String date_to, String picture, String text) {
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
