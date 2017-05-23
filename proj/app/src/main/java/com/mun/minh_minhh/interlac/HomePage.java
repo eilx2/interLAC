@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
+import com.mun.minh_minhh.interlac.Chat.ChatMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 
 public class HomePage extends BasicActivity {

@@ -75,8 +75,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:text="Theater/Dance"
                     android:background="@drawable/btn_bg"
+                    android:text="Theater/Dance"
                     android:textColor="@drawable/text_col" />
             </RelativeLayout>
 
@@ -89,9 +89,9 @@
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Music"
                     android:background="@drawable/btn_bg"
-                    android:textColor="@drawable/text_col"/>
+                    android:text="Music"
+                    android:textColor="@drawable/text_col" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -103,9 +103,9 @@
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Art"
                     android:background="@drawable/btn_bg"
-                    android:textColor="@drawable/text_col"/>
+                    android:text="Art"
+                    android:textColor="@drawable/text_col" />
             </RelativeLayout>
 
 
