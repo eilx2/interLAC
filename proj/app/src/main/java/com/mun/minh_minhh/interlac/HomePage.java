@@ -38,7 +38,7 @@ public class HomePage extends BasicActivity {
                 .addSubMenu(Color.parseColor("#30A400"), R.drawable.ic_event)
                 .addSubMenu(Color.parseColor("#FF4B32"), R.drawable.ic_camera)
                 .addSubMenu(Color.parseColor("#8A39FF"), R.drawable.ic_chat)
-                .addSubMenu(Color.parseColor("#FF6A00"), R.drawable.ic_setting)
+
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
 
                     @Override
