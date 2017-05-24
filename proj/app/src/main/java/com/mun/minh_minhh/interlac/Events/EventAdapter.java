@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac.Events.Music;
+package com.mun.minh_minhh.interlac.Events;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
  * Created by marcel on 22.05.17.
  */
 
-public class MusicEventAdapter extends ArrayAdapter<MusicEvent> {
-    public MusicEventAdapter (Context context, ArrayList<MusicEvent> musicEvents) {
+public class EventAdapter extends ArrayAdapter<Event> {
+    public EventAdapter(Context context, ArrayList<Event> musicEvents) {
         super(context,0,musicEvents);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        MusicEvent musicEvent = getItem(position);
+        Event musicEvent = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item2, parent, false);

@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac.Events.Music;
+package com.mun.minh_minhh.interlac.Events;
 
 import android.util.Log;
 

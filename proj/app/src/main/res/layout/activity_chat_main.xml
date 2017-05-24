@@ -63,45 +63,40 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp">
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/roomList"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/button3">
+        </ListView>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/hoho"
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginBottom="50dp"
-            android:background="@color/colorPrimary"
-            android:clickable="true"
-            android:src="@drawable/ic_send"
-            android:tint="@android:color/white"
-            app:backgroundTint="@color/colorPrimary" />
+            android:text="Subject" />
 
-        <EditText
-            android:id="@+id/user_message"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="50dp"
-            android:layout_toLeftOf="@+id/hoho"
-            android:backgroundTint="@color/colorPrimary"
-            android:hint="Enter the message" />
 
-        <ListView
-            android:id="@+id/list_of_message"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@id/hoho"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="50dp"
-            android:divider="@android:color/transparent"
-            android:dividerHeight="10dp"
-            android:stackFromBottom="true"
-            android:transcriptMode="alwaysScroll" />
+
+
+
 
 
 
