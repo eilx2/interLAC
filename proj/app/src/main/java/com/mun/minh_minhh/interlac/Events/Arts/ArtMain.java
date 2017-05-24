@@ -2,8 +2,10 @@ package com.mun.minh_minhh.interlac.Events.Arts;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alexvasilkov.android.commons.texts.SpannableBuilder;
 import com.alexvasilkov.android.commons.utils.Views;
@@ -18,19 +21,27 @@ import com.alexvasilkov.foldablelayout.UnfoldableView;
 import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.BottomNavHelp;
 import com.mun.minh_minhh.interlac.EventMain;
+import com.mun.minh_minhh.interlac.Events.Event;
+import com.mun.minh_minhh.interlac.Events.EventAdapter;
+import com.mun.minh_minhh.interlac.Events.HttpHandler;
 import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 import com.mun.minh_minhh.interlac.R;
-import com.mun.minh_minhh.interlac.Events.Arts.items.Painting;
-import com.mun.minh_minhh.interlac.Events.Arts.items.PaintingsAdapter;
-import com.mun.minh_minhh.interlac.Events.Arts.utils.GlideHelper;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ArtMain extends BasicActivity {
 
-    private ListView mListView;
-    private View mListTouchInterceptor;
-    private View mDetailsLayout;
-    private UnfoldableView mUnfoldableView;
+    private String TAG = MusicMain.class.getSimpleName();
+    private ListView lv;
+    private EventAdapter adapter;
+    private ArrayList<Event> artEvents;
+
+    ArrayList<HashMap<String, String>> eventList;
     public Button button;
 
 
@@ -59,89 +70,108 @@ public class ArtMain extends BasicActivity {
     }
 
 
-
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_art_main);
+        setContentView(R.layout.event_layout);
+        TextView tv = (TextView)findViewById(R.id.textView3);
+        tv.setText("Art");
         super.initBottomNavigation();
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
         BottomNavHelp.disableShiftMode(bottomNavigationView);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);
-        init_music_button();
         init_theater_button();
+        init_music_button();
 
-        mListView = (ListView) findViewById(R.id.list_view);
-        mListView.setAdapter(new PaintingsAdapter(this));
-        mListTouchInterceptor = findViewById(R.id.touch_interceptor_view);
-        mListTouchInterceptor.setClickable(false);
+        eventList = new ArrayList<>();
+        artEvents = new ArrayList<>();
+        lv = (ListView) findViewById(R.id.list);
 
-        mDetailsLayout = findViewById(R.id.details_layout);
-        mDetailsLayout.setVisibility(View.INVISIBLE);
 
-        mUnfoldableView = (UnfoldableView) findViewById(R.id.unfoldable_view);
-
-        mUnfoldableView.setOnFoldingListener(new UnfoldableView.SimpleFoldingListener() {
-            @Override
-            public void onUnfolding(UnfoldableView unfoldableView) {
-                mListTouchInterceptor.setClickable(true);
-                mDetailsLayout.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onUnfolded(UnfoldableView unfoldableView) {
-                mListTouchInterceptor.setClickable(false);
-            }
-
-            @Override
-            public void onFoldingBack(UnfoldableView unfoldableView) {
-                mListTouchInterceptor.setClickable(true);
-            }
-
-            @Override
-            public void onFoldedBack(UnfoldableView unfoldableView) {
-                mListTouchInterceptor.setClickable(false);
-                mDetailsLayout.setVisibility(View.INVISIBLE);
-            }
-        });
+        new ArtMain.GetEvents().execute();
     }
 
-    @Override
-    public void onBackPressed() {
-        if (mUnfoldableView != null
-                && (mUnfoldableView.isUnfolded() || mUnfoldableView.isUnfolding())) {
-            mUnfoldableView.foldBack();
-        } else {
-            super.onBackPressed();
+    private class GetEvents extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Toast.makeText(ArtMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
+
         }
-    }
 
-    public void openDetails(View coverView, Painting painting) {
-        final ImageView image = Views.find(mDetailsLayout, R.id.details_image);
-        final TextView title = Views.find(mDetailsLayout, R.id.details_title);
-        final TextView description = Views.find(mDetailsLayout, R.id.details_text);
+        @Override
+        protected Void doInBackground(Void... arg0) {
+            HttpHandler sh = new HttpHandler();
+            // Making a request to url and getting response
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/24/2017";
+            String jsonStrUncut = sh.makeServiceCall(url);
+            String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
-        GlideHelper.loadPaintingImage(image, painting);
-        title.setText(painting.getTitle());
 
-        SpannableBuilder builder = new SpannableBuilder(this);
-        builder
-                .createStyle().setFont(Typeface.DEFAULT_BOLD).apply()
-                .append("Year").append(": ")
-                .clearStyle()
-                .append(painting.getYear()).append("\n")
-                .createStyle().setFont(Typeface.DEFAULT_BOLD).apply()
-                .append("Location").append(": ")
-                .clearStyle()
-                .append(painting.getLocation());
-        description.setText(builder.build());
+            Log.e(TAG, "Response from url: " + jsonStr);
+            if (jsonStr != null) {
+                try {
+                    JSONArray events = new JSONArray(jsonStr);
 
-        mUnfoldableView.unfold(coverView, mDetailsLayout);
+                    // looping through All the events
+                    for (int i = 0; i < events.length(); i++) {
+                        JSONObject event = events.getJSONObject(i);
 
+                        // Every Item is an object, first we get the Current Item
+                        JSONObject item = event.getJSONObject("item");
+
+                        //And then we get the data from it
+                        String id = item.getString("item_ID");
+                        String title = item.getString("item_title");
+                        String subtitle = item.getString("item_subtitle");
+                        String category = item.getString("item_category");
+                        String from  = item.getString("item_date_from");
+                        String to = item.getString("item_date_to");
+                        String picture = item.getString("item_main_picture");
+                        String text = item.getString("item_text");
+
+                        Event musicEvent = new Event(id,title,subtitle,category,from,to,picture,text);
+
+                        if(category.equals("Arte"))
+                            artEvents.add(musicEvent);
+
+                    }
+                } catch (final JSONException e) {
+                    Log.e(TAG, "An error has occured: " + e.getMessage());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getApplicationContext(),
+                                    "An error has occured: " + e.getMessage(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+                }
+
+            } else {
+                Log.e(TAG, "Couldn't get data from server.");
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(getApplicationContext(),
+                                "Couldn't get data from server",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            adapter = new EventAdapter(ArtMain.this, artEvents);
+            lv.setAdapter(adapter);
+        }
     }
 }

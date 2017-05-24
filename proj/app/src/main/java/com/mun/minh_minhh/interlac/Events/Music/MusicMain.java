@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
         import com.mun.minh_minhh.interlac.BasicActivity;
@@ -69,6 +70,8 @@ public class MusicMain extends BasicActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_layout);
+        TextView tv = (TextView)findViewById(R.id.textView3);
+        tv.setText("Music");
         super.initBottomNavigation();
 
 
