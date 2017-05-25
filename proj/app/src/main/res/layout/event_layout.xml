@@ -15,7 +15,13 @@
         <RelativeLayout
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="51dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorWhite"
+                android:layout_alignParentBottom="true"/>
 
 
             <TextView
@@ -38,7 +44,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginRight="0.5dp">
 
                 <Button
                     android:id="@+id/button1"
@@ -52,7 +59,10 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginLeft="0.5dp"
+                android:layout_marginRight="0.5dp">
+
 
                 <Button
                     android:id="@+id/button2"
@@ -68,8 +78,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-
+                android:layout_weight="1"
+                android:layout_marginLeft="0.5dp">
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
@@ -115,11 +125,12 @@
 
 
     </android.support.design.widget.AppBarLayout>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:layout_marginTop="100dp"
-        android:background="@color/colorWhite"/>
+        android:background="@color/colorWhite" />
 </android.support.design.widget.CoordinatorLayout>
