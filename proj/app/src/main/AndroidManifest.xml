@@ -54,7 +54,7 @@
             android:name=".Events.Theater.TheaterMain"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".SettingsMain"
+            android:name=".GalleryMain"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Events.Music.MusicMain"

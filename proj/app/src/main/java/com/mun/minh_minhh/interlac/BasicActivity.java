@@ -46,9 +46,9 @@ public  class BasicActivity extends AppCompatActivity {
                         startActivity(new Intent(BasicActivity.this,ChatMain.class));
                         break;
                     case R.id.ic_setting:
-                        if (BasicActivity.this instanceof SettingsMain)
+                        if (BasicActivity.this instanceof GalleryMain)
                             return true;
-                        startActivity(new Intent(BasicActivity.this,SettingsMain.class));
+                        startActivity(new Intent(BasicActivity.this,GalleryMain.class));
                         break;
                     default:
                         return false;
@@ -57,5 +57,7 @@ public  class BasicActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+
     }
 }

@@ -43,7 +43,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Theater/Dance"
-                    android:background="@drawable/btn_bg"
+                    android:background="@android:color/transparent"
                     android:textColor="@drawable/text_col"
                     />
             </RelativeLayout>

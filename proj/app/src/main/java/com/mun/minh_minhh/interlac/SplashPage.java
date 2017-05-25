@@ -1,73 +1,70 @@
 package com.mun.minh_minhh.interlac;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Handler;
-import android.provider.Settings;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.HomePage;
+import com.mun.minh_minhh.interlac.R;
 
 public class SplashPage extends BasicActivity {
-
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Window window = getWindow();
+        window.setFormat(PixelFormat.RGBA_8888);
+    }
+    /** Called when the activity is first created. */
+    Thread splashTread;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_splash_page);
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_page);
+        StartAnimations();
     }
+    private void StartAnimations() {
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        anim.reset();
+        LinearLayout l=(LinearLayout) findViewById(R.id.lin_lay);
+        l.clearAnimation();
+        l.startAnimation(anim);
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        checkInternetConnection();
-    }
+        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+        anim.reset();
+        ImageView iv = (ImageView) findViewById(R.id.imageView3);
+        iv.clearAnimation();
+        iv.startAnimation(anim);
 
-    private void runSplash() {
-        Thread mySplash = new Thread(){
+        splashTread = new Thread() {
             @Override
             public void run() {
                 try {
-                    sleep(2000);
-                    Intent i = new Intent(getApplicationContext(), HomePage.class);
-                    startActivity(i);
-                    finish();
+                    int waited = 0;
+                    // Splash screen pause time
+                    while (waited < 3500) {
+                        sleep(100);
+                        waited += 100;
+                    }
+                    Intent intent = new Intent(SplashPage.this,
+                            HomePage.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
+                    SplashPage.this.finish();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    // do nothing
+                } finally {
+                    SplashPage.this.finish();
                 }
 
             }
         };
+        splashTread.start();
 
-        mySplash.start();
     }
 
-    private void checkInternetConnection() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-
-        if (activeNetworkInfo!=null && activeNetworkInfo.isConnected()) {
-            runSplash();
-            return;
-        }
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Please connect to an WiFi or enable mobile data.")
-                .setCancelable(false)
-                .setPositiveButton("Connect", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
-                    }
-                })
-                .setNegativeButton("Quit", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        SplashPage.this.finish();
-                    }
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
 }
