@@ -9,11 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.mun.minh_minhh.interlac.BasicActivity;
-import com.mun.minh_minhh.interlac.HomePage;
-import com.mun.minh_minhh.interlac.R;
-
-public class SplashPage extends BasicActivity {
+public class SplashPage1 extends BasicActivity {
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Window window = getWindow();
@@ -24,17 +20,13 @@ public class SplashPage extends BasicActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_page);
+        setContentView(R.layout.activity_splash_page1);
         StartAnimations();
     }
     private void StartAnimations() {
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
-        anim.reset();
-        LinearLayout l=(LinearLayout) findViewById(R.id.lin_lay);
-        l.clearAnimation();
-        l.startAnimation(anim);
 
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         ImageView iv = (ImageView) findViewById(R.id.imageView3);
         iv.clearAnimation();
@@ -46,19 +38,19 @@ public class SplashPage extends BasicActivity {
                 try {
                     int waited = 0;
                     // Splash screen pause time
-                    while (waited < 3500) {
+                    while (waited < 5000) {
                         sleep(100);
                         waited += 100;
                     }
-                    Intent intent = new Intent(SplashPage.this,
+                    Intent intent = new Intent(SplashPage1.this,
                             HomePage.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
-                    SplashPage.this.finish();
+                    SplashPage1.this.finish();
                 } catch (InterruptedException e) {
                     // do nothing
                 } finally {
-                    SplashPage.this.finish();
+                    SplashPage1.this.finish();
                 }
 
             }

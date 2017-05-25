@@ -15,14 +15,17 @@
         android:id="@+id/ic_camera"
         android:icon="@drawable/ic_camera"
         android:title="Camera" />
+
+    <item
+        android:id="@+id/ic_gallery"
+        android:icon="@drawable/ic_gallery"
+        android:title="Gallery" />
+
     <item
         android:id="@+id/ic_chat"
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
 
-    <item
-        android:id="@+id/ic_setting"
-        android:icon="@drawable/ic_setting"
-        android:title="Settings" />
+
 
 </menu>

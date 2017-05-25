@@ -4,29 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.mun.minh_minhh.interlac.BasicActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="@color/colorWhite">
+        android:background="@android:color/transparent">
 
 
         <RelativeLayout
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
-            <ImageView
-                android:id="@+id/imageView2"
+            android:layout_height="50dp"
+            >
+
+
+            <TextView
+                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/logo" />
-
-
-
+                android:layout_centerVertical="true"
+                android:text="Gallery"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
         </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
@@ -35,7 +39,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeLayout">
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:id="@+id/relativeLayout"
+        android:background="@color/colorWhite">
 
 
         <Button
@@ -55,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorGrey">
+        android:background="@android:color/transparent">
 
 
         <RelativeLayout
@@ -67,13 +74,16 @@
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/border_bottom"
-                app:menu="@menu/navigation">
+                app:menu="@menu/navigation"
+                app:itemIconTint="@color/colorWhite"
+                app:itemTextColor="@color/colorWhite"
+                >
 
             </android.support.design.widget.BottomNavigationView>
 
 
         </RelativeLayout>
+
 
     </android.support.design.widget.AppBarLayout>
 

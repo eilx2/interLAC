@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/lin_lay1"
     android:layout_height="match_parent"
     tools:context="com.mun.minh_minhh.interlac.BasicActivity"
     android:background="@drawable/background">
@@ -20,6 +21,7 @@
     </LinearLayout>
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/iconH"
@@ -29,6 +31,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/frow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -59,6 +62,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/srow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"

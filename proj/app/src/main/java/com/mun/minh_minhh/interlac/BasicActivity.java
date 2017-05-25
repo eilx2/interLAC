@@ -31,7 +31,7 @@ public  class BasicActivity extends AppCompatActivity {
                         startActivity(new Intent(BasicActivity.this,HomePage.class));
                         break;
                     case R.id.ic_event:
-                        if (BasicActivity.this instanceof EventMain)
+                        if (BasicActivity.this instanceof TheaterMain)
                             return true;
                         startActivity(new Intent(BasicActivity.this,TheaterMain.class));
                         break;
@@ -45,7 +45,7 @@ public  class BasicActivity extends AppCompatActivity {
                             return true;
                         startActivity(new Intent(BasicActivity.this,ChatMain.class));
                         break;
-                    case R.id.ic_setting:
+                    case R.id.ic_gallery:
                         if (BasicActivity.this instanceof GalleryMain)
                             return true;
                         startActivity(new Intent(BasicActivity.this,GalleryMain.class));

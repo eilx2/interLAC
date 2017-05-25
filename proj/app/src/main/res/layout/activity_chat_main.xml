@@ -4,46 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mun.minh_minhh.interlac.BasicActivity"
-
+android:background="@drawable/background"
     >
 
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="@drawable/border_top"
-        >
-
-
-        <RelativeLayout
-            android:id="@+id/topBar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/border_top">
-
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:text="Chat"
-                android:textSize="18dp" />
-        </RelativeLayout>
-
-    </android.support.design.widget.AppBarLayout>
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorGrey"
-        android:id="@+id/bottomBar">
+        android:background="@android:color/transparent">
 
 
         <RelativeLayout
-
+            android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
@@ -51,13 +24,16 @@
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/border_bottom"
-                app:menu="@menu/navigation">
+                app:menu="@menu/navigation"
+                app:itemIconTint="@color/colorWhite"
+                app:itemTextColor="@color/colorWhite"
+                >
 
             </android.support.design.widget.BottomNavigationView>
 
 
         </RelativeLayout>
+
 
     </android.support.design.widget.AppBarLayout>
 
@@ -65,7 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:background="@color/colorWhite">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -101,5 +78,33 @@
 
 
     </RelativeLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@android:color/transparent">
+
+
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            >
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Chat"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,7 +1,7 @@
 package com.mun.minh_minhh.interlac.Events.Arts;
 
 import android.content.Intent;
-import android.graphics.Typeface;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.design.widget.BottomNavigationView;
 import android.os.Bundle;
@@ -10,17 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.alexvasilkov.android.commons.texts.SpannableBuilder;
-import com.alexvasilkov.android.commons.utils.Views;
-import com.alexvasilkov.foldablelayout.UnfoldableView;
 import com.mun.minh_minhh.interlac.BasicActivity;
 import com.mun.minh_minhh.interlac.BottomNavHelp;
-import com.mun.minh_minhh.interlac.EventMain;
 import com.mun.minh_minhh.interlac.Events.Event;
 import com.mun.minh_minhh.interlac.Events.EventAdapter;
 import com.mun.minh_minhh.interlac.Events.HttpHandler;
@@ -75,6 +70,15 @@ public class ArtMain extends BasicActivity {
         setContentView(R.layout.event_layout);
         TextView tv = (TextView)findViewById(R.id.textView3);
         tv.setText("Art");
+        Button btn1 = (Button)findViewById(R.id.button2);
+        Button btn2 = (Button)findViewById(R.id.button1);
+        btn1.setBackgroundResource(R.color.colorWhite);
+        btn1.setTextColor(Color.BLACK);
+        btn1.setTextSize(14);
+        btn2.setBackgroundResource(R.color.colorWhite);
+        btn2.setTextColor(Color.BLACK);
+        btn2.setTextSize(14);
+
         super.initBottomNavigation();
 
 

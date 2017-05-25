@@ -104,7 +104,7 @@ public class ChatRoom extends AppCompatActivity {
         chatUserName = (String) dataSnapshot.child("name").getValue();
         chatMessage= (String) dataSnapshot.child("message").getValue();
 
-        receiveMes.append(chatUserName + ":" + chatMessage + "\n\n");
+        receiveMes.append(chatUserName + ": " + chatMessage + "\n\n");
 
 
     }

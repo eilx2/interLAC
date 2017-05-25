@@ -1,6 +1,7 @@
 package com.mun.minh_minhh.interlac.Events.Music;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
         import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -72,6 +73,14 @@ public class MusicMain extends BasicActivity {
         setContentView(R.layout.event_layout);
         TextView tv = (TextView)findViewById(R.id.textView3);
         tv.setText("Music");
+        Button btn1 = (Button)findViewById(R.id.button1);
+        Button btn2 = (Button)findViewById(R.id.button3);
+        btn1.setBackgroundResource(R.color.colorWhite);
+        btn1.setTextColor(Color.BLACK);
+        btn1.setTextSize(14);
+        btn2.setBackgroundResource(R.color.colorWhite);
+        btn2.setTextColor(Color.BLACK);
+        btn2.setTextSize(14);
         super.initBottomNavigation();
 
 
