@@ -1,7 +1,10 @@
 package com.mun.minh_minhh.interlac.Chat;
 
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +15,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.BottomNavHelp;
 import com.mun.minh_minhh.interlac.R;
 
 import java.util.HashMap;
@@ -19,7 +24,7 @@ import java.util.Map;
 
 import static com.mun.minh_minhh.interlac.R.id.editText;
 
-public class ChatRoom extends AppCompatActivity {
+public class ChatRoom extends BasicActivity {
     Button sendBtn;
     TextView receiveMes;
     EditText sendMes;
@@ -39,6 +44,13 @@ public class ChatRoom extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
+        super.initBottomNavigation();
+
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
+        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(4);
+        menuItem.setChecked(true);
 
         sendBtn = (Button) findViewById(R.id.sendMessBtn);
         receiveMes = (TextView) findViewById(R.id.receive);
