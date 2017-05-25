@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain;
 
 public class GalleryMain extends BasicActivity {
@@ -18,8 +19,7 @@ public class GalleryMain extends BasicActivity {
         setContentView(R.layout.activity_gallery_main);
         super.initBottomNavigation();
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
-        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(3);
         menuItem.setChecked(true);

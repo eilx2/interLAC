@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.Chat.ChatMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 
@@ -17,10 +18,18 @@ public  class BasicActivity extends AppCompatActivity {
     }
 
     public void initBottomNavigation() {
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
-        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewEx btv = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+        btv.enableAnimation(false);
+        btv.enableShiftingMode(false);
+        btv.enableItemShiftingMode(false);
+        btv.setTextVisibility(false);
+        btv.setIconSize(32,32);
+        btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 50));
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
+
+
+
+        btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
 
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

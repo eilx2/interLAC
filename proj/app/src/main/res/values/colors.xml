@@ -1,28 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#9D006C</color>
-    <color name="colorPrimaryDark1">#d09d006c</color>
-
-
+    <color name="colorPrimaryDark">#cdf4762c</color>
+    <color name="colorPrimaryDark1">#f4762c</color>
     <color name="colorAccent">#cc000083</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorGrey">#c3c3c3</color>
-    <color name="bgBackSideColor">#f4f0ff</color>
-    <color name="bgTitleLeft">#594691</color>
-    <color name="bgTitleRight">#ffffff</color>
-    <color name="bgContentTop">#594691</color>
-    <color name="bgContent">#ffffff</color>
-    <color name="contentDividerLine">#e0e0e0</color>
-    <color name="contentBadgeTitle">#a9a9a9</color>
-    <color name="titleBadgeTitle">#adafb1</color>
-    <color name="titleBadgeText">#adafb1</color>
+    <color name="colorGrey1">#e1e0e1</color>
     <color name="mainTextColor">#343d43</color>
-    <color name="btnRequest">#ffbf12</color>
-    <color name="button_pressed">#FE2E2E</color>
-    <color name="button_focused">#FE2E2E</color>
-    <color name="button_default">#1c76bb</color>
-
     <color name="black_overlay">#66000000</color>
 
 </resources>

@@ -101,7 +101,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@android:color/transparent">
+        android:background="@color/colorWhite"
+        >
 
 
         <RelativeLayout
@@ -109,16 +110,16 @@
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
-            <android.support.design.widget.BottomNavigationView
+            <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:menu="@menu/navigation"
-                app:itemIconTint="@color/colorWhite"
-                app:itemTextColor="@color/colorWhite"
-                >
+                android:background="@color/colorWhite"
+                app:itemIconTint="@drawable/color_pick"
+                app:itemTextColor="@drawable/color_pick">
 
-            </android.support.design.widget.BottomNavigationView>
+            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
 
         </RelativeLayout>
