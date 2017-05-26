@@ -39,6 +39,7 @@ dependencies {
     compile 'com.google.firebase:firebase-database:10.2.4'
     compile 'com.google.firebase:firebase-auth:10.2.4'
     compile 'com.google.firebase:firebase-storage:10.2.4'
+
     compile 'com.ramotion.foldingcell:folding-cell:1.1.0'
     compile 'com.github.Hitomis:CircleMenu:v1.1.0'
     compile 'com.alexvasilkov:foldable-layout:1.2.1'
