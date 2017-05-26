@@ -104,19 +104,19 @@ public class HomePage extends BasicActivity {
         ImageView iv = (ImageView) findViewById(R.id.imageView4);
         iv.clearAnimation();
         iv.startAnimation(anim);
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+        anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         ImageView iv1 = (ImageView) findViewById(R.id.imageView4);
         iv1.clearAnimation();
         iv1.startAnimation(anim);
 
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+        anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         LinearLayout ln1 = (LinearLayout) findViewById(R.id.frow);
         ln1.clearAnimation();
         ln1.startAnimation(anim);
 
-        anim = AnimationUtils.loadAnimation(this, R.anim.translate);
+        anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
         anim.reset();
         LinearLayout ln2 = (LinearLayout) findViewById(R.id.srow);
         ln2.clearAnimation();
