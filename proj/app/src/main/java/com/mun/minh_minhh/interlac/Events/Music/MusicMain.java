@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
         import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,8 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
-import com.mun.minh_minhh.interlac.BasicActivity;
-import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
 import com.mun.minh_minhh.interlac.Events.EventAdapter;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;

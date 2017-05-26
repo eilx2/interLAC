@@ -1,31 +1,24 @@
 package com.mun.minh_minhh.interlac;
 
 import android.content.Intent;
-import android.graphics.Color;
 
 import android.graphics.PixelFormat;
 import android.os.Bundle;
-
-import android.provider.Settings;
 
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 
-import com.hitomi.cmlibrary.CircleMenu;
-import com.hitomi.cmlibrary.OnMenuSelectedListener;
-import com.hitomi.cmlibrary.OnMenuStatusChangeListener;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
+import com.mun.minh_minhh.interlac.Camera.CameraMain;
 import com.mun.minh_minhh.interlac.Chat.ChatMain;
-import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
-import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
+import com.mun.minh_minhh.interlac.Gallery.GalleryMain;
 
 public class HomePage extends BasicActivity {
     public void onAttachedToWindow() {

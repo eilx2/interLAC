@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.BasicAct;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -8,8 +8,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.mun.minh_minhh.interlac.Camera.CameraMain;
 import com.mun.minh_minhh.interlac.Chat.ChatMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
+import com.mun.minh_minhh.interlac.Gallery.GalleryMain;
+import com.mun.minh_minhh.interlac.HomePage;
+import com.mun.minh_minhh.interlac.R;
 
 public  class BasicActivity extends AppCompatActivity {
     @Override
@@ -23,10 +27,8 @@ public  class BasicActivity extends AppCompatActivity {
         btv.enableShiftingMode(false);
         btv.enableItemShiftingMode(false);
         btv.setTextVisibility(false);
-        btv.setIconSize(32,32);
-        btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 50));
-
-
+        btv.setIconSize(24,24);
+        btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 45));
 
 
         btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){

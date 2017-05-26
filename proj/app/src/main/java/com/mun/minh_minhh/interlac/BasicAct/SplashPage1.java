@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.BasicAct;
 
 import android.content.Intent;
 import android.graphics.PixelFormat;
@@ -7,7 +7,9 @@ import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
+import com.mun.minh_minhh.interlac.HomePage;
+import com.mun.minh_minhh.interlac.R;
 
 public class SplashPage1 extends BasicActivity {
     public void onAttachedToWindow() {

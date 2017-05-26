@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.Camera;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,7 +16,9 @@ import android.util.TypedValue;
 import android.view.ViewGroup;
 
 import com.google.zxing.Result;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain;
+import com.mun.minh_minhh.interlac.R;
 
 import me.dm7.barcodescanner.core.IViewFinder;
 import me.dm7.barcodescanner.core.ViewFinderView;

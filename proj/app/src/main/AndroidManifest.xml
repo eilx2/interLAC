@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".SplashPage1"
+            android:name=".BasicAct.SplashPage1"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +28,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BasicActivity"
+            android:name=".BasicAct.BasicActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".CameraMain"
+            android:name=".Camera.CameraMain"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -50,7 +50,7 @@
             android:name=".Events.Theater.TheaterMain"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".GalleryMain"
+            android:name=".Gallery.GalleryMain"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".Events.Music.MusicMain"

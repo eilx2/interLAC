@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:id="@+id/lin_lay1"
     android:layout_height="match_parent"
-    tools:context="com.mun.minh_minhh.interlac.BasicActivity"
+    tools:context="com.mun.minh_minhh.interlac.BasicAct.BasicActivity"
     android:background="@drawable/background">
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="#40000000"
+                android:background="#15000000"
                 android:layout_marginRight="3dp"
                 android:src="@drawable/event"
                 android:textColor="@color/colorWhite"/>
@@ -56,7 +56,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_weight="1"
-                android:background="#40000000"
+                android:background="#15000000"
                 android:src="@drawable/camera"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>
@@ -78,7 +78,7 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:text="Message"
-                android:background="#40000000"
+                android:background="#15000000"
                 android:src="@drawable/mess"
                 android:textColor="@color/colorWhite"/>
 
@@ -89,7 +89,7 @@
                 android:layout_height="150dp"
                 android:layout_weight="1"
                 android:text="Gallery"
-                android:background="#40000000"
+                android:background="#15000000"
                 android:src="@drawable/gallery"
                 android:textColor="@color/colorWhite"/>
         </LinearLayout>

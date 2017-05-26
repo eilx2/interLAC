@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/lin_lay"
-    tools:context="com.mun.minh_minhh.interlac.BasicActivity"
+    tools:context="com.mun.minh_minhh.interlac.BasicAct.BasicActivity"
     android:background="@drawable/background">
 
     <ImageView

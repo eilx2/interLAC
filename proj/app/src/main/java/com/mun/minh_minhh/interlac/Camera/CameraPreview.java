@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac;
+package com.mun.minh_minhh.interlac.Camera;
 
 import android.content.Context;
 import android.hardware.Camera;
