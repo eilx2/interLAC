@@ -2,11 +2,6 @@ package com.mun.minh_minhh.interlac.Chat;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.AsyncTask;
-
-import android.preference.DialogPreference;
-import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
 
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -27,16 +22,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
-import com.mun.minh_minhh.interlac.BasicActivity;
-import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -56,10 +49,9 @@ public class ChatMain extends BasicActivity {
         setContentView(R.layout.activity_chat_main);
         super.initBottomNavigation();
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
-        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
         Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(3);
+        MenuItem menuItem = menu.getItem(4);
         menuItem.setChecked(true);
 
         roomName = (EditText) findViewById(R.id.editText);

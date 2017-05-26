@@ -1,19 +1,20 @@
 package com.mun.minh_minhh.interlac.Events.Theater;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mun.minh_minhh.interlac.BasicActivity;
-import com.mun.minh_minhh.interlac.BottomNavHelp;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
 import com.mun.minh_minhh.interlac.Events.Event;
 import com.mun.minh_minhh.interlac.Events.HttpHandler;
@@ -70,10 +71,20 @@ public class TheaterMain extends BasicActivity {public Button button;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_layout);
+        TextView tv = (TextView)findViewById(R.id.textView3);
+        tv.setText("Theater & Dance");
+        Button btn1 = (Button)findViewById(R.id.button2);
+        Button btn2 = (Button)findViewById(R.id.button3);
+        btn1.setBackgroundResource(R.color.colorWhite);
+        btn1.setTextColor(Color.BLACK);
+        btn1.setTextSize(14);
+        btn2.setBackgroundResource(R.color.colorWhite);
+        btn2.setTextColor(Color.BLACK);
+        btn2.setTextSize(14);
         super.initBottomNavigation();
 
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNav);
-        BottomNavHelp.disableShiftMode(bottomNavigationView);
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+
         Menu menu = bottomNavigationView.getMenu();
         MenuItem menuItem = menu.getItem(1);
         menuItem.setChecked(true);

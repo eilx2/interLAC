@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain">
 
     <LinearLayout
@@ -12,37 +13,37 @@
         android:orientation="vertical">
 
         <android.support.design.widget.AppBarLayout
-            android:id="@+id/topBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:background="@color/colorWhite">
+            android:background="@android:color/transparent">
 
 
             <RelativeLayout
-
+                android:id="@+id/topBar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="50dp"
+                >
 
-                <ImageView
-                    android:id="@+id/imageView2"
+
+                <TextView
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true"
-                    app:srcCompat="@drawable/logo" />
-
-
+                    android:layout_centerVertical="true"
+                    android:text="Review"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
             </RelativeLayout>
 
         </android.support.design.widget.AppBarLayout>
 
         <LinearLayout
+            android:background="@color/colorGrey1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <LinearLayout

@@ -1,7 +1,8 @@
 package com.mun.minh_minhh.interlac.Chat;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,14 +13,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.R;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.mun.minh_minhh.interlac.R.id.editText;
-
-public class ChatRoom extends AppCompatActivity {
+public class ChatRoom extends BasicActivity {
     Button sendBtn;
     TextView receiveMes;
     EditText sendMes;
@@ -39,6 +40,12 @@ public class ChatRoom extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
+        super.initBottomNavigation();
+
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(4);
+        menuItem.setChecked(true);
 
         sendBtn = (Button) findViewById(R.id.sendMessBtn);
         receiveMes = (TextView) findViewById(R.id.receive);
@@ -104,7 +111,7 @@ public class ChatRoom extends AppCompatActivity {
         chatUserName = (String) dataSnapshot.child("name").getValue();
         chatMessage= (String) dataSnapshot.child("message").getValue();
 
-        receiveMes.append(chatUserName + ":" + chatMessage + "\n\n");
+        receiveMes.append(chatUserName + ": " + chatMessage + "\n\n");
 
 
     }

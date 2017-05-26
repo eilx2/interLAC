@@ -3,79 +3,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:background="@color/colorWhite">
+        android:background="@android:color/transparent">
 
 
         <RelativeLayout
             android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/border_top">
+            android:layout_height="51dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorWhite"
+                android:layout_alignParentBottom="true"/>
 
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="Music"
-                android:textSize="18dp" />
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
         </RelativeLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:weightSum="3"
+            android:background="@android:color/transparent"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginRight="0.5dp">
 
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Theater/Dance"
-                    android:background="@drawable/btn_bg"
-                    android:textColor="@drawable/text_col"
-                    />
+                    android:textSize="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@android:color/transparent"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:layout_marginLeft="0.5dp"
+                android:layout_marginRight="0.5dp">
+
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorWhite"
                     android:text="Music"
-                    android:background="@drawable/btn_bg"
-                    android:textColor="@drawable/text_col"
+                    android:textSize="16dp"
+                    android:background="@android:color/transparent"
+
                     />
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-
+                android:layout_weight="1"
+                android:layout_marginLeft="0.5dp">
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="Art"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentStart="true"
-                    android:background="@drawable/btn_bg"
-                    android:textColor="@drawable/text_col"/>
+                    android:textSize="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:background="@android:color/transparent"
+                    />
             </RelativeLayout>
 
 
@@ -88,7 +101,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorGrey">
+        android:background="@color/colorWhite"
+        >
 
 
         <RelativeLayout
@@ -96,24 +110,28 @@
             android:layout_width="match_parent"
             android:layout_height="50dp">
 
-            <android.support.design.widget.BottomNavigationView
+            <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/border_bottom"
-                app:menu="@menu/navigation">
+                app:menu="@menu/navigation"
+                android:background="@color/colorWhite"
+                app:itemIconTint="@drawable/color_pick"
+                app:itemTextColor="@drawable/color_pick">
 
-            </android.support.design.widget.BottomNavigationView>
+            </com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx>
 
 
         </RelativeLayout>
 
 
     </android.support.design.widget.AppBarLayout>
+
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="100dp"
+        android:background="@color/colorWhite" />
 </android.support.design.widget.CoordinatorLayout>

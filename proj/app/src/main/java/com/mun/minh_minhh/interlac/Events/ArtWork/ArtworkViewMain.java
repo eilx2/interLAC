@@ -19,7 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.mun.minh_minhh.interlac.BasicActivity;
+import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.Reviews.Review;
 import com.mun.minh_minhh.interlac.Events.Reviews.ReviewAdapter;
 import com.mun.minh_minhh.interlac.Events.Reviews.ReviewPage;

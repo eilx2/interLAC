@@ -1,46 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/lin_lay1"
     android:layout_height="match_parent"
-    tools:context="com.mun.minh_minhh.interlac.BasicActivity"
-    >
-
-    <RelativeLayout
+    tools:context="com.mun.minh_minhh.interlac.BasicAct.BasicActivity"
+    android:background="@drawable/background">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:id="@+id/iconH">
 
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
-            android:visibility="visible"
-            app:srcCompat="@drawable/logo" />
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/icon" />
+    </LinearLayout>
 
-        <TextView
-            android:id="@+id/text1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imageView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:text="Let the journey begin"
-            android:textSize="20dp" />
+    <LinearLayout
 
-        <com.hitomi.cmlibrary.CircleMenu
-            android:id="@+id/circle_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/iconH"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_marginBottom="20dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/frow"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/text1"
-            />
-
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true">
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+
+            <ImageButton
+                android:id="@+id/buttonE"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="#15000000"
+                android:layout_marginRight="3dp"
+                android:src="@drawable/event"
+                android:textColor="@color/colorWhite"/>
+
+            <ImageButton
+                android:id="@+id/buttonC"
+                android:layout_marginLeft="3dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:background="#15000000"
+                android:src="@drawable/camera"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/srow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:layout_alignParentBottom="true">
+
+
+            <ImageButton
+                android:layout_marginRight="3dp"
+                android:id="@+id/buttonM"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:text="Message"
+                android:background="#15000000"
+                android:src="@drawable/mess"
+                android:textColor="@color/colorWhite"/>
+
+            <ImageButton
+                android:layout_marginLeft="3dp"
+                android:id="@+id/buttonG"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:text="Gallery"
+                android:background="#15000000"
+                android:src="@drawable/gallery"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
