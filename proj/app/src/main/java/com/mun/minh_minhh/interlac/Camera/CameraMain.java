@@ -45,7 +45,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
             }
         };
 
-        contentFrame.addView(mScannerView);
+      //  contentFrame.addView(mScannerView);
     }
 
     @Override
