@@ -103,7 +103,6 @@ public class TheaterMain extends BasicActivity {public Button button;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(TheaterMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
 
         }
 

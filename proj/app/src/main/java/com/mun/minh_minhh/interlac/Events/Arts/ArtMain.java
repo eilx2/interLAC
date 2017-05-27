@@ -103,7 +103,6 @@ public class ArtMain extends BasicActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //Toast.makeText(ArtMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
 
         }
 

@@ -182,8 +182,4 @@ public class ArtworkViewMain extends BasicActivity {
             }
         });
     }
-
-
-
-
 }
