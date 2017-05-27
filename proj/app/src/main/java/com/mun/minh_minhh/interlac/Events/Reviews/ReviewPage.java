@@ -5,15 +5,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mun.minh_minhh.interlac.R;
 
+import static com.mun.minh_minhh.interlac.R.id.cancelReview;
+import static com.mun.minh_minhh.interlac.R.id.postReview;
+
 public class ReviewPage extends AppCompatActivity {
     private String pictureId;
+    private Review review;
     private final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     @Override
@@ -22,6 +28,14 @@ public class ReviewPage extends AppCompatActivity {
         setContentView(R.layout.activity_review_page);
 
         pictureId = getIntent().getStringExtra("id");
+
+        Button cancelReview = (Button) findViewById(R.id.cancelReview);
+        cancelReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReviewPage.super.onBackPressed();
+            }
+        });
         Button postReview = (Button) findViewById(R.id.postReview);
         postReview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +50,7 @@ public class ReviewPage extends AppCompatActivity {
         String authorName = ((EditText) findViewById(R.id.editName)).getText().toString();
         String reviewContent = ((EditText) findViewById(R.id.editReview)).getText().toString();
         float rating = ((RatingBar) findViewById(R.id.ratingBar)).getRating();
+
 
         if (authorName.equals("") || reviewContent.equals("")) {
             Toast.makeText(this,"Please complete all fields.", Toast.LENGTH_LONG).show();
@@ -52,5 +67,7 @@ public class ReviewPage extends AppCompatActivity {
         mRef = mDatabase.child("/artworks/"+pictureId + "/review_list");
         mRef.push().setValue(reviewId);
         return true;
+
+
     }
 }
