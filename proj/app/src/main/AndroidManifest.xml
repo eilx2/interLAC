@@ -61,7 +61,11 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".Events.Arts.ArtMain" />
         <activity android:name=".Events.Reviews.ReviewPage" />
-        <activity android:name=".Chat.ChatRoom"></activity>
+        <activity android:name=".Chat.ChatRoom" />
+        <activity
+            android:name=".Events.EventSpecific"
+            android:label="@string/title_activity_event_specific"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

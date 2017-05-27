@@ -1,9 +1,5 @@
 package com.mun.minh_minhh.interlac.Events;
 
-/**
- * Created by marcel on 22.05.17.
- */
-
 public class Event {
     private String id, title, subtitle, category, date_from, date_to, picture, text;
 
