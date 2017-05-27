@@ -22,6 +22,7 @@ import com.squareup.picasso.Picasso;
 
 public class Artwork {
     //set to public to allow Firebase access
+    public int likes;
     public String name, author, pictureName, description;
     public int year;
 
@@ -29,13 +30,13 @@ public class Artwork {
     public Artwork() {
     }
 
-    public Artwork(String author, String name, String picture, int year, String description) {
+    public Artwork(String author, String name, String picture, int year, String description,int likes) {
         this.author = author;
         this.name = name;
         this.pictureName = picture;
         this.year = year;
         this.description = description;
-
+        this.likes = likes;
     }
 
 }

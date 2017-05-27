@@ -28,7 +28,11 @@ public  class BasicActivity extends AppCompatActivity {
         btv.enableItemShiftingMode(false);
         btv.setTextVisibility(false);
         btv.setIconSize(24,24);
+        btv.setIconSizeAt(2, 45, 45);
+        btv.setIconTintList(2,
+                getResources().getColorStateList(R.color.colorPrimaryDark1));
         btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 45));
+        btv.setIconMarginTop(2, BottomNavigationViewEx.dp2px(this, 0));
 
 
         btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){

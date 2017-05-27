@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -29,6 +30,9 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.review_layout, parent, false);
         }
+
+        TextView likes = (TextView) convertView.findViewById(R.id.like);
+        likes.setText(String.valueOf(review.likes));
 
         TextView content = (TextView) convertView.findViewById(R.id.rowTextView);
         content.setText(review.content);

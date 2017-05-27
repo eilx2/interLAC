@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,26 +32,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static android.R.attr.button;
+
 public class ArtworkViewMain extends BasicActivity {
     private String pictureId;
     private Artwork artwork;
+    private Review review;
     private final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     private String TAG = "ArtworkViewMain";
     private ReviewAdapter reviewsAdapter;
     private ArrayList<Review> reviewList = new ArrayList<>();
     private HashMap<String,Integer> keyToReviewPos = new HashMap<>();
-
+    ImageButton btn;
+    TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wait_splash);
-
-
         pictureId = getIntent().getStringExtra("id");
         Log.d("asf",pictureId);
         loadMainInfo();
 
+
+
     }
+
+
+
 
     private void loadMainInfo() {
         final DatabaseReference mRef = mDatabase.child("/artworks/"+pictureId);
@@ -83,6 +91,7 @@ public class ArtworkViewMain extends BasicActivity {
 
         TextView descriptionView = (TextView) findViewById(R.id.description);
         descriptionView.setText(artwork.description);
+
 
         Button reviewButton = (Button) findViewById(R.id.reviewButton);
         reviewButton.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +136,7 @@ public class ArtworkViewMain extends BasicActivity {
         reviewsAdapter = new ReviewAdapter(this,reviewList);
         ListView reviewList = (ListView) findViewById(R.id.reviewList);
         reviewList.setAdapter(reviewsAdapter);
+
 
         final DatabaseReference mRef = mDatabase.child("/artworks/"+pictureId+"/review_list");
         mRef.addChildEventListener(new ChildEventListener() {

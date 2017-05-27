@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -75,10 +76,12 @@ public class TheaterMain extends BasicActivity {public Button button;
         tv.setText("Theater & Dance");
         Button btn1 = (Button)findViewById(R.id.button2);
         Button btn2 = (Button)findViewById(R.id.button3);
-        btn1.setBackgroundResource(R.color.colorWhite);
+        ImageView im1 = (ImageView)findViewById(R.id.lin2);
+        ImageView im2 = (ImageView)findViewById(R.id.lin3);
+        im1.setBackgroundColor(Color.WHITE);
+        im2.setBackgroundColor(Color.WHITE);
         btn1.setTextColor(Color.BLACK);
         btn1.setTextSize(14);
-        btn2.setBackgroundResource(R.color.colorWhite);
         btn2.setTextColor(Color.BLACK);
         btn2.setTextSize(14);
         super.initBottomNavigation();
@@ -103,7 +106,6 @@ public class TheaterMain extends BasicActivity {public Button button;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(TheaterMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
 
         }
 
