@@ -23,16 +23,8 @@ public  class BasicActivity extends AppCompatActivity {
 
     public void initBottomNavigation() {
         BottomNavigationViewEx btv = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-        btv.enableAnimation(false);
-        btv.enableShiftingMode(false);
-        btv.enableItemShiftingMode(false);
-        btv.setTextVisibility(false);
-        btv.setIconSize(24,24);
-        btv.setIconSizeAt(2, 45, 45);
-        btv.setIconTintList(2,
-                getResources().getColorStateList(R.color.colorPrimaryDark1));
-        btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 45));
-        btv.setIconMarginTop(2, BottomNavigationViewEx.dp2px(this, 0));
+
+
 
 
         btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
