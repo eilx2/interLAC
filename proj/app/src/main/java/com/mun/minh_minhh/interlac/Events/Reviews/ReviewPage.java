@@ -14,6 +14,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.mun.minh_minhh.interlac.R;
 
+import static com.mun.minh_minhh.interlac.R.id.cancelReview;
+import static com.mun.minh_minhh.interlac.R.id.postReview;
+
 public class ReviewPage extends AppCompatActivity {
     private String pictureId;
     private Review review;
@@ -24,9 +27,15 @@ public class ReviewPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_page);
 
-
-
         pictureId = getIntent().getStringExtra("id");
+
+        Button cancelReview = (Button) findViewById(R.id.cancelReview);
+        cancelReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ReviewPage.super.onBackPressed();
+            }
+        });
         Button postReview = (Button) findViewById(R.id.postReview);
         postReview.setOnClickListener(new View.OnClickListener() {
             @Override

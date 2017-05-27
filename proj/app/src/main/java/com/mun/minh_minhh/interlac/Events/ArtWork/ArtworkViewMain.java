@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
+import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -83,7 +86,7 @@ public class ArtworkViewMain extends BasicActivity {
 
 
     }
-
+    
     private void drawInterface() {
         setContentView(R.layout.activity_artwork_view_main);
         TextView nameView = (TextView) findViewById(R.id.name);
@@ -91,6 +94,33 @@ public class ArtworkViewMain extends BasicActivity {
 
         TextView descriptionView = (TextView) findViewById(R.id.description);
         descriptionView.setText(artwork.description);
+
+        final ScrollView layout_review = (ScrollView) findViewById(R.id.layout_review) ;
+        final LinearLayout layout_review2 = (LinearLayout) findViewById(R.id.layout_review2) ;
+
+
+        Button reviewButton1 = (Button) findViewById(R.id.reviewButton1);
+        reviewButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                layout_review.setVisibility(View.GONE);
+                layout_review2.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        ImageButton button_back = (ImageButton) findViewById(R.id.button_back);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                layout_review.setVisibility(View.VISIBLE);
+                layout_review2.setVisibility(View.GONE);
+
+            }
+        });
+
 
 
         Button reviewButton = (Button) findViewById(R.id.reviewButton);
@@ -102,6 +132,8 @@ public class ArtworkViewMain extends BasicActivity {
                 startActivity(intent);
             }
         });
+
+
 
     }
 
