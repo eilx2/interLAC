@@ -183,7 +183,6 @@ public class ArtMain extends BasicActivity {
                     intent.putExtra("title",artEvents.get(i).getTitle());
                     intent.putExtra("picture_url",artEvents.get(i).getPicture());
                     intent.putExtra("text", artEvents.get(i).getText());
-
                     startActivity(intent);
                 }
             });

@@ -23,8 +23,9 @@ public  class BasicActivity extends AppCompatActivity {
 
     public void initBottomNavigation() {
         BottomNavigationViewEx btv = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-
-
+        btv.enableAnimation(false);
+        btv.enableShiftingMode(false);
+        btv.enableItemShiftingMode(false);
 
 
         btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){
