@@ -13,9 +13,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-/**
- * Created by marcel on 22.05.17.
- */
 
 public class EventAdapter extends ArrayAdapter<Event> {
     public EventAdapter(Context context, ArrayList<Event> musicEvents) {

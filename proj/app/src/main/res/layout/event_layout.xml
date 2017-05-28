@@ -39,56 +39,70 @@
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:weightSum="3"
-            android:background="@android:color/transparent"
+            android:background="@color/colorWhite"
             >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginRight="0.5dp">
-
+                >
                 <Button
                     android:id="@+id/button1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Theater/Dance"
+                    android:textAllCaps="false"
                     android:textSize="16dp"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorPrimaryDark1"
                     android:background="@android:color/transparent"/>
+                <ImageView
+                    android:id="@+id/lin1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimaryDark1"
+                    android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_marginLeft="0.5dp"
-                android:layout_marginRight="0.5dp">
-
-
+                android:layout_weight="1">
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorPrimaryDark1"
                     android:text="Music"
+                    android:textAllCaps="false"
                     android:textSize="16dp"
-                    android:background="@android:color/transparent"
-
-                    />
+                    android:background="@android:color/transparent" />
+                <ImageView
+                    android:id="@+id/lin2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimaryDark1"
+                    android:layout_alignParentBottom="true"/>
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginLeft="0.5dp">
+                >
                 <Button
                     android:id="@+id/button3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="Art"
                     android:textSize="16dp"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorPrimaryDark1"
                     android:background="@android:color/transparent"
-                    />
+                    android:textAllCaps="false"
+                    android:layout_alignParentStart="true" />
+                <ImageView
+                    android:id="@+id/lin3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimaryDark1"
+                    android:layout_alignParentBottom="true"/>
             </RelativeLayout>
 
 

@@ -7,4 +7,5 @@
     <string name="title_activity_settings_main">SettingsMain</string>
     <string name="title_activity_artwork_view_main">ArtworkViewMain</string>
     <string name="simsimi_api">bfa49abc-ebbb-4357-9546-c1dab87ae05c</string>
+    <string name="title_activity_event_specific">EventSpecific</string>
 </resources>

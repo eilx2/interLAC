@@ -13,9 +13,12 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 
 import com.google.zxing.Result;
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain;
 import com.mun.minh_minhh.interlac.R;
@@ -33,6 +36,11 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capture_layout);
+        super.initBottomNavigation();
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
 
 
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
@@ -43,7 +51,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
             }
         };
 
-      //  contentFrame.addView(mScannerView);
+        contentFrame.addView(mScannerView);
     }
 
     @Override
@@ -72,8 +80,8 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
 
     //class for drawing over scanner
     private static class CustomViewFinderView extends ViewFinderView {
-        public static final String TRADE_MARK_TEXT = "eXpats";
-        public static final int TRADE_MARK_TEXT_SIZE_SP = 40;
+        public static final String TRADE_MARK_TEXT = "Point the camera at the barcode";
+
         public final Paint PAINT = new Paint();
 
         public CustomViewFinderView(Context context) {
@@ -90,7 +98,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
             PAINT.setColor(Color.WHITE);
             PAINT.setAntiAlias(true);
             float textPixelSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
-                    TRADE_MARK_TEXT_SIZE_SP, getResources().getDisplayMetrics());
+                    20, getResources().getDisplayMetrics());
             PAINT.setTextSize(textPixelSize);
             setSquareViewFinder(true);
         }
@@ -107,7 +115,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
             float tradeMarkLeft;
             if (framingRect != null) {
                 tradeMarkTop = framingRect.bottom + PAINT.getTextSize() + 10;
-                tradeMarkLeft = framingRect.left;
+                tradeMarkLeft = (framingRect.left+framingRect.right-PAINT.measureText(TRADE_MARK_TEXT))/2;
             } else {
                 tradeMarkTop = 10;
                 tradeMarkLeft = canvas.getHeight() - PAINT.getTextSize() - 10;

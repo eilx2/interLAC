@@ -28,7 +28,7 @@ public class SplashPage1 extends BasicActivity {
     private void StartAnimations() {
 
 
-        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.alpha1);
         anim.reset();
         ImageView iv = (ImageView) findViewById(R.id.imageView3);
         iv.clearAnimation();

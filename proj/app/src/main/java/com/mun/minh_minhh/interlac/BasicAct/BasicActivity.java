@@ -26,9 +26,6 @@ public  class BasicActivity extends AppCompatActivity {
         btv.enableAnimation(false);
         btv.enableShiftingMode(false);
         btv.enableItemShiftingMode(false);
-        btv.setTextVisibility(false);
-        btv.setIconSize(24,24);
-        btv.setItemHeight(BottomNavigationViewEx.dp2px(this, 45));
 
 
         btv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener(){

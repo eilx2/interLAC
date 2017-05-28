@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,6 +18,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.Event;
 import com.mun.minh_minhh.interlac.Events.EventAdapter;
+import com.mun.minh_minhh.interlac.Events.EventSpecific;
 import com.mun.minh_minhh.interlac.Events.HttpHandler;
 import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
 import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
@@ -101,7 +103,6 @@ public class ArtMain extends BasicActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(ArtMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
 
         }
 
@@ -175,6 +176,16 @@ public class ArtMain extends BasicActivity {
             super.onPostExecute(result);
             adapter = new EventAdapter(ArtMain.this, artEvents);
             lv.setAdapter(adapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(ArtMain.this, EventSpecific.class);
+                    intent.putExtra("title",artEvents.get(i).getTitle());
+                    intent.putExtra("picture_url",artEvents.get(i).getPicture());
+                    intent.putExtra("text", artEvents.get(i).getText());
+                    startActivity(intent);
+                }
+            });
         }
     }
 }

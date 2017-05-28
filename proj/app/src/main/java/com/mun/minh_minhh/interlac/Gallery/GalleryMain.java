@@ -25,7 +25,7 @@ public class GalleryMain extends BasicActivity {
         MenuItem menuItem = menu.getItem(3);
         menuItem.setChecked(true);
 
-        final Button button = (Button) findViewById(R.id.testbut);
+        final Button button = (Button) findViewById(R.id.image1);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //Server.writeReview(1,new Review("john","lol,shit",0,2));

@@ -6,125 +6,180 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     tools:context="com.mun.minh_minhh.interlac.Events.ArtWork.ArtworkViewMain">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@android:color/transparent"
+        >
+        <RelativeLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
 
-    <LinearLayout
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="Review"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:background="@android:color/transparent">
-
-
-            <RelativeLayout
-                android:id="@+id/topBar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                >
-
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:text="Review"
-                    android:textColor="@color/colorWhite"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-            </RelativeLayout>
-
-        </android.support.design.widget.AppBarLayout>
+        android:layout_marginTop="50dp"
+        android:id="@+id/layout_review">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
 
         <LinearLayout
-            android:background="@color/colorGrey1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="500dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/picView"
                 android:layout_width="match_parent"
-                android:layout_height="259dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/cafe_terrace" />
+        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/picView"
-                    android:layout_width="match_parent"
-                    android:layout_height="252dp"
-                    android:layout_weight="1"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/cafe_terrace" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/name"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        android:layout_marginStart="8dp"
-                        android:text="Title"
-                        android:textAlignment="center"
-                        android:textSize="24sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        tools:layout_editor_absoluteY="125dp" />
-
-                    <TextView
-                        android:id="@+id/description"
-                        android:layout_width="match_parent"
-                        android:layout_height="202dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="18dp"
-                        android:text="TextView"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/name"
-                        app:layout_constraintVertical_bias="0.571" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView"
+                android:layout_weight="2"
+                android:orientation="vertical">
+                <Button
+                    android:id="@+id/desButton1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Reviews"
-                    android:textAlignment="center"
-                    android:textSize="25sp"
-                    tools:layout_editor_absoluteX="-169dp"
-                    tools:layout_editor_absoluteY="249dp" />
+                    android:text="Description"
+                    android:textColor="@color/colorPrimaryDark1"
+                    android:textAllCaps="false"
+                    android:background="@android:color/transparent"
+                    />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorPrimaryDark1"/>
 
-                <Button
-                    android:id="@+id/reviewButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Write review" />
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/reviewList"
+
+            <Button
+                android:id="@+id/reviewButton1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:background="@color/colorWhite"
+                android:text="Reviews"
+                android:layout_weight="2"/>
+
+
 
         </LinearLayout>
 
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:text="Title"
+                android:textColor="@color/colorPrimaryDark1"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/mainTextColor"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                app:layout_constraintVertical_bias="0.571" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/layout_review2"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/button_back"
+                android:background="@drawable/arrow"
+                android:scaleX="-1"
+                android:backgroundTint="@color/colorWhite" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+            <Button
+                android:id="@+id/reviewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Write a Review"
+                android:textSize="17dp"
+                android:layout_marginRight="10dp"
+                android:textColor="@color/colorWhite"
+                android:background="@android:color/transparent"/>
+                </LinearLayout>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/reviewList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:dividerHeight="1dp"
+            android:padding="10dp"
+            />
     </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>

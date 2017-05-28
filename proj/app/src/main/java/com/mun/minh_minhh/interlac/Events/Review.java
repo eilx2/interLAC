@@ -1,4 +1,4 @@
-package com.mun.minh_minhh.interlac.Events.Reviews;
+package com.mun.minh_minhh.interlac.Events;
 
 
 public class Review {

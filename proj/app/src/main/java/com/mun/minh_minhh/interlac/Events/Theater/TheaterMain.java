@@ -8,7 +8,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +19,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Events.Arts.ArtMain;
 import com.mun.minh_minhh.interlac.Events.Event;
+import com.mun.minh_minhh.interlac.Events.EventSpecific;
 import com.mun.minh_minhh.interlac.Events.HttpHandler;
 import com.mun.minh_minhh.interlac.Events.Music.MusicMain;
 import com.mun.minh_minhh.interlac.Events.EventAdapter;
@@ -75,10 +78,12 @@ public class TheaterMain extends BasicActivity {public Button button;
         tv.setText("Theater & Dance");
         Button btn1 = (Button)findViewById(R.id.button2);
         Button btn2 = (Button)findViewById(R.id.button3);
-        btn1.setBackgroundResource(R.color.colorWhite);
+        ImageView im1 = (ImageView)findViewById(R.id.lin2);
+        ImageView im2 = (ImageView)findViewById(R.id.lin3);
+        im1.setBackgroundColor(Color.WHITE);
+        im2.setBackgroundColor(Color.WHITE);
         btn1.setTextColor(Color.BLACK);
         btn1.setTextSize(14);
-        btn2.setBackgroundResource(R.color.colorWhite);
         btn2.setTextColor(Color.BLACK);
         btn2.setTextSize(14);
         super.initBottomNavigation();
@@ -103,7 +108,6 @@ public class TheaterMain extends BasicActivity {public Button button;
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            Toast.makeText(TheaterMain.this,"Data is downloading",Toast.LENGTH_LONG).show();
 
         }
 
@@ -177,6 +181,17 @@ public class TheaterMain extends BasicActivity {public Button button;
             super.onPostExecute(result);
             adapter = new EventAdapter(TheaterMain.this, theaterEvents);
             lv.setAdapter(adapter);
+            lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Intent intent = new Intent(TheaterMain.this, EventSpecific.class);
+                    intent.putExtra("title",theaterEvents.get(i).getTitle());
+                    intent.putExtra("picture_url",theaterEvents.get(i).getPicture());
+                    intent.putExtra("text", theaterEvents.get(i).getText());
+
+                    startActivity(intent);
+                }
+            });
         }
     }
 }
