@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,18 +23,16 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
-import com.mun.minh_minhh.interlac.Events.Reviews.Review;
-import com.mun.minh_minhh.interlac.Events.Reviews.ReviewAdapter;
+import com.mun.minh_minhh.interlac.Events.Review;
+import com.mun.minh_minhh.interlac.Events.ReviewAdapter;
 import com.mun.minh_minhh.interlac.Events.Reviews.ReviewPage;
-import com.mun.minh_minhh.interlac.R;
 import com.squareup.picasso.Picasso;
+import com.mun.minh_minhh.interlac.R;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import static android.R.attr.button;
 
 public class ArtworkViewMain extends BasicActivity {
     private String pictureId;

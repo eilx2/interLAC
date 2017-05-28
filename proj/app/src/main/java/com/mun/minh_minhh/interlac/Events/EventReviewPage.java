@@ -43,7 +43,7 @@ public class EventReviewPage extends AppCompatActivity {
             return false;
         }
 
-        EventReview review = new EventReview(authorName, reviewContent, rating, title);
+        Review review = new Review(authorName, reviewContent,0, 0, rating);
         DatabaseReference mRef = mDatabase.child("/event_reviews");
         mRef = mRef.push();
         mRef.setValue(review);

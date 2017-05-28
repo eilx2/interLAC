@@ -1,20 +1,21 @@
 package com.mun.minh_minhh.interlac.Events;
 
-public class EventReview {
+
+public class Review {
     //set to public to allow firebase access
     public String author,content;
+    public int likes,dislikes;
     public float rating;
-    public String title;
 
-    public EventReview() {
+    public Review() {
     }
 
-    public EventReview(String author, String content, float rating, String title) {
+    public Review(String author, String content, int likes, int dislikes, float rating) {
         this.author = author;
         this.content = content;
+        this.likes = likes;
+        this.dislikes = dislikes;
         this.rating = rating;
-        this.title = title;
     }
 
 }
-

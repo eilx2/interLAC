@@ -5,8 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -26,8 +29,8 @@ public class EventSpecific extends AppCompatActivity {
     String title;
     Bundle mBundle;
     //private String TAG = "EventSpecific";
-    private EventReviewAdapter reviewsAdapter;
-    private ArrayList<EventReview> reviewList = new ArrayList<>();
+    private ReviewAdapter reviewsAdapter;
+    private ArrayList<Review> reviewList = new ArrayList<>();
     private HashMap<String, Integer> keyToReviewPos = new HashMap<>();
 
 
@@ -37,6 +40,30 @@ public class EventSpecific extends AppCompatActivity {
         setContentView(R.layout.activity_artwork_view_main);
         setUp();
 
+
+        final ScrollView layout_review = (ScrollView) findViewById(R.id.layout_review) ;
+        final LinearLayout layout_review2 = (LinearLayout) findViewById(R.id.layout_review2) ;
+        Button reviewButton1 = (Button) findViewById(R.id.reviewButton1);
+        reviewButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                layout_review.setVisibility(View.GONE);
+                layout_review2.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        ImageButton button_back = (ImageButton) findViewById(R.id.button_back);
+        button_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                layout_review.setVisibility(View.VISIBLE);
+                layout_review2.setVisibility(View.GONE);
+
+            }
+        });
 
         Button reviewButton = (Button) findViewById(R.id.reviewButton);
         reviewButton.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +106,7 @@ public class EventSpecific extends AppCompatActivity {
 
 
     private void attachReviewsListener() {
-        reviewsAdapter = new EventReviewAdapter(this, reviewList);
+        reviewsAdapter = new ReviewAdapter(this, reviewList);
         ListView reviewList = (ListView) findViewById(R.id.reviewList);
         reviewList.setAdapter(reviewsAdapter);
 
@@ -117,7 +144,7 @@ public class EventSpecific extends AppCompatActivity {
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                EventReview review = dataSnapshot.getValue(EventReview.class);
+                Review review = dataSnapshot.getValue(Review.class);
                 String key = dataSnapshot.getKey();
 
                 if (keyToReviewPos.get(dataSnapshot.getKey()) != null) {

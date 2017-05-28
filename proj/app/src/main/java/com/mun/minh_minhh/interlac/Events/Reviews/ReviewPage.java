@@ -5,17 +5,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RatingBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mun.minh_minhh.interlac.Events.Review;
 import com.mun.minh_minhh.interlac.R;
-
-import static com.mun.minh_minhh.interlac.R.id.cancelReview;
-import static com.mun.minh_minhh.interlac.R.id.postReview;
 
 public class ReviewPage extends AppCompatActivity {
     private String pictureId;
