@@ -18,4 +18,11 @@ public class Review {
         this.rating = rating;
     }
 
+    public void setLikes() {
+        likes++;
+    }
+
+    public void setDislikes() {
+        dislikes++;
+    }
 }
