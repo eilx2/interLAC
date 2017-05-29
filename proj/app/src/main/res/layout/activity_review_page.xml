@@ -92,7 +92,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tap a Start to Rate"
+                android:text="Tap a star to rate"
                 android:gravity="center"/>
         </LinearLayout>
 
@@ -140,7 +140,7 @@
                 android:background="@color/colorGrey" />
 
             <EditText
-                android:hint="Write a Review"
+                android:hint="Write a review"
                 android:textColorHint="@color/colorGrey"
                 android:id="@+id/editReview"
                 android:layout_width="match_parent"

@@ -27,7 +27,9 @@ import me.dm7.barcodescanner.core.IViewFinder;
 import me.dm7.barcodescanner.core.ViewFinderView;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-
+/**
+ * Created by holenr on 13.05.2017
+ */
 public class CameraMain extends BasicActivity implements ZXingScannerView.ResultHandler {
     private ZXingScannerView mScannerView;
 
