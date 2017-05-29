@@ -35,6 +35,15 @@ public class ChatRoom extends BasicActivity {
     private String chatUserName;
     private String chatMessage;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(4);
+        menuItem.setChecked(true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +51,6 @@ public class ChatRoom extends BasicActivity {
         setContentView(R.layout.activity_chat_room);
         super.initBottomNavigation();
 
-        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(4);
-        menuItem.setChecked(true);
 
         sendBtn = (Button) findViewById(R.id.sendMessBtn);
         receiveMes = (TextView) findViewById(R.id.receive);

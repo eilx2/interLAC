@@ -39,10 +39,7 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         super.onCreate(savedInstanceState);
         setContentView(R.layout.capture_layout);
         super.initBottomNavigation();
-        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(2);
-        menuItem.setChecked(true);
+
 
 
         ViewGroup contentFrame = (ViewGroup) findViewById(R.id.content_frame);
@@ -61,6 +58,12 @@ public class CameraMain extends BasicActivity implements ZXingScannerView.Result
         super.onResume();
         mScannerView.setResultHandler(this);
         mScannerView.startCamera();
+
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(2);
+        menuItem.setChecked(true);
     }
 
     @Override
