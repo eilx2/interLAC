@@ -1,11 +1,17 @@
 package com.mun.minh_minhh.interlac.Chat;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -20,10 +26,15 @@ import com.mun.minh_minhh.interlac.R;
 import java.util.HashMap;
 import java.util.Map;
 
+import static android.view.Gravity.CENTER;
+
 public class ChatRoom extends BasicActivity {
-    Button sendBtn;
-    TextView receiveMes;
+    ImageButton sendBtn;
     EditText sendMes;
+    ScrollView scrollView;
+    LinearLayout layout;
+
+
 
     //Data Reference
 
@@ -52,12 +63,21 @@ public class ChatRoom extends BasicActivity {
         super.initBottomNavigation();
 
 
-        sendBtn = (Button) findViewById(R.id.sendMessBtn);
-        receiveMes = (TextView) findViewById(R.id.receive);
+        scrollView = (ScrollView)findViewById(R.id.scrollView);
+        layout = (LinearLayout) findViewById(R.id.layout1);
+
+
+        sendBtn = (ImageButton) findViewById(R.id.sendMessBtn);
         sendMes = (EditText) findViewById(R.id.sendMes);
 
         roomName = getIntent().getExtras().get("Room_name").toString();
         userName = getIntent().getExtras().get("User_name").toString();
+
+        TextView room = (TextView) findViewById(R.id.roomName);
+        room.setText(roomName);
+
+
+
 
         //Set Act title to room name
 
@@ -116,8 +136,42 @@ public class ChatRoom extends BasicActivity {
         chatUserName = (String) dataSnapshot.child("name").getValue();
         chatMessage= (String) dataSnapshot.child("message").getValue();
 
-        receiveMes.append(chatUserName + ": " + chatMessage + "\n\n");
+        if(chatUserName.equals(userName)){
+            addMessageBox("You: " + chatMessage ,2);
+        }
+        else{
+            addMessageBox(chatUserName + ": " + chatMessage ,1);
 
+        }
 
+    }
+    public void addMessageBox(String message, int type){
+        TextView textView = new TextView(ChatRoom.this);
+        textView.setText(message);
+
+        LinearLayout.LayoutParams lp2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp2.weight = 1.0f;
+
+        if(type == 1) {
+            lp2.gravity = Gravity.LEFT;
+            lp2.topMargin = 20;
+            lp2.leftMargin = 50;
+            textView.setBackgroundResource(R.drawable.bubble_out);
+            textView.setTextColor(Color.BLACK);
+            textView.setGravity(Gravity.CENTER);
+            textView.setPadding(25, 10, 25, 10);
+        }
+        else{
+            lp2.gravity = Gravity.RIGHT;
+            lp2.topMargin = 20;
+            lp2.rightMargin = 30;
+            textView.setTextColor(Color.WHITE);
+            textView.setBackgroundResource(R.drawable.bubble_in);
+            textView.setGravity(Gravity.CENTER);
+            textView.setPadding(25, 10, 25, 10);
+        }
+        textView.setLayoutParams(lp2);
+        layout.addView(textView);
+        scrollView.fullScroll(View.FOCUS_DOWN);
     }
 }

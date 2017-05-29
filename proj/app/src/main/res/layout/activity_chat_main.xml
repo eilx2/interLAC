@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.mun.minh_minhh.interlac.BasicAct.BasicActivity"
 android:background="@drawable/background"
     >
@@ -66,42 +67,58 @@ android:background="@drawable/background"
 
     </android.support.design.widget.AppBarLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
         android:layout_marginTop="50dp"
-        android:background="@color/colorGrey1">
-
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@color/colorPrimaryDark1"
+            android:text="Choose the room you want to discuss \n Create your own subject"
+            android:textSize="16dp"
+            android:textColor="@color/colorWhite"/>
         <ListView
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:id="@+id/roomList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/button3"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
             android:background="@color/colorWhite"
-            android:dividerHeight="5dp"></ListView>
+            android:dividerHeight="5dp"
+            android:layout_weight="1"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:background="@color/colorWhite"
+            android:layout_weight="4">
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Start a new topic"
+                android:layout_weight="1"
+                android:inputType="textPersonName" />
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            android:ems="10"
-            android:hint="Name"
-            android:inputType="textPersonName" />
+            <Button
+                android:id="@+id/button3"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                android:layout_weight="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:text="Subject" />
+        </LinearLayout>
 
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </android.support.design.widget.CoordinatorLayout>
