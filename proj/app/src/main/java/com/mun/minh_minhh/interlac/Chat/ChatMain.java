@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.R;
+import com.mun.minh_minhh.interlac.UserData;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -111,6 +112,11 @@ public class ChatMain extends BasicActivity {
     }
 
     private void request_name() {
+        if (UserData.getName()!="") {
+            userName = UserData.getName();
+            return;
+        }
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Enter your name");
         final EditText editText = new EditText(this);
@@ -119,6 +125,7 @@ public class ChatMain extends BasicActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 userName = editText.getText().toString();
+                UserData.setName(userName);
                 if (!TextUtils.isEmpty(userName))
                 {
 

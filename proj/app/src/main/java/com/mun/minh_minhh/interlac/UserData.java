@@ -31,7 +31,7 @@ import java.util.TreeSet;
 public class UserData extends BasicActivity {
     private static TreeSet<String> likedReviews = new TreeSet<>();
     private static final String PREFS_NAME="interLAC_settings";
-    private static String uid;
+    private static String uid, name="";
     private static final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     public static Context context;
     private static boolean isInitialized = false;
@@ -50,10 +50,8 @@ public class UserData extends BasicActivity {
     }
 
     private static void get_uid() {
-        SharedPreferences preferences = context.getSharedPreferences(PREFS_NAME,Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = preferences.edit();
-        editor2.clear();
-        editor2.apply();
+        SharedPreferences preferences = context.getSharedPreferences(PREFS_NAME,0);
+
 
         uid = preferences.getString("userId","");
         if (uid.equals("")) {
@@ -61,7 +59,7 @@ public class UserData extends BasicActivity {
             editor.clear();
             uid = randomString();
             editor.putString("userId",uid);
-            editor.apply();
+            editor.commit();
         }
     }
 
@@ -88,6 +86,19 @@ public class UserData extends BasicActivity {
             }
         });
 
+        mDatabase.child("/users/"+uid+"/name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String name = (String)(dataSnapshot.getValue());
+                if (name != null) UserData.name = name;
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
     public static void addReview(String reviewId) {
@@ -104,12 +115,21 @@ public class UserData extends BasicActivity {
     }
 
     public static boolean containsReview(String reviewId) {
-        Log.d("user_data","hey");
+
         return likedReviews.contains(reviewId);
     }
 
     public static void removeReview(String reviewId) {
         likedReviews.remove(reviewId);
         postData();
+    }
+
+    public static void setName(String name) {
+        mDatabase.child("/users/"+uid+"/name").setValue(name);
+        UserData.name = name;
+    }
+
+    public static String getName() {
+        return name;
     }
 }

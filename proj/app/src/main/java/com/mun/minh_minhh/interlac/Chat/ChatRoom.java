@@ -160,6 +160,8 @@ public class ChatRoom extends BasicActivity {
             textView.setTextColor(Color.BLACK);
             textView.setGravity(Gravity.CENTER);
             textView.setPadding(25, 10, 25, 10);
+            textView.setTextSize(20);
+
         }
         else{
             lp2.gravity = Gravity.RIGHT;
@@ -169,6 +171,7 @@ public class ChatRoom extends BasicActivity {
             textView.setBackgroundResource(R.drawable.bubble_in);
             textView.setGravity(Gravity.CENTER);
             textView.setPadding(25, 10, 25, 10);
+            textView.setTextSize(20);
         }
         textView.setLayoutParams(lp2);
         layout.addView(textView);
