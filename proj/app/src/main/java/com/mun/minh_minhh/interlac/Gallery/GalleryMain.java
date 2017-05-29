@@ -15,15 +15,22 @@ import com.mun.minh_minhh.interlac.R;
 public class GalleryMain extends BasicActivity {
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(3);
+        menuItem.setChecked(true);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery_main);
         super.initBottomNavigation();
 
-        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(3);
-        menuItem.setChecked(true);
+
 
         final Button button = (Button) findViewById(R.id.image1);
         button.setOnClickListener(new View.OnClickListener() {

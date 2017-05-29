@@ -69,6 +69,16 @@ public class MusicMain extends BasicActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
+
+        Menu menu = bottomNavigationView.getMenu();
+        MenuItem menuItem = menu.getItem(1);
+        menuItem.setChecked(true);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_layout);
@@ -85,10 +95,7 @@ public class MusicMain extends BasicActivity {
         super.initBottomNavigation();
 
 
-        BottomNavigationViewEx bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNav);
-        Menu menu = bottomNavigationView.getMenu();
-        MenuItem menuItem = menu.getItem(1);
-        menuItem.setChecked(true);
+
         init_theater_button();
         init_art_button();
 

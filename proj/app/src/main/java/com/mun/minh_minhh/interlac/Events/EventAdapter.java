@@ -1,6 +1,7 @@
 package com.mun.minh_minhh.interlac.Events;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,10 +28,10 @@ public class EventAdapter extends ArrayAdapter<Event> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item2, parent, false);
         }
 
-        ((TextView) convertView.findViewById(R.id.title)).setText(musicEvent.getTitle());
-        ((TextView) convertView.findViewById(R.id.subtitle)).setText(musicEvent.getSubtitle());
-        ((TextView) convertView.findViewById(R.id.from)).setText(musicEvent.getDate_from());
-        ((TextView) convertView.findViewById(R.id.to)).setText(musicEvent.getDate_to());
+        ((TextView) convertView.findViewById(R.id.title)).setText(Html.fromHtml(musicEvent.getTitle()));
+        ((TextView) convertView.findViewById(R.id.subtitle)).setText(Html.fromHtml(musicEvent.getSubtitle()));
+        ((TextView) convertView.findViewById(R.id.from)).setText(Html.fromHtml(musicEvent.getDate_from()));
+        ((TextView) convertView.findViewById(R.id.to)).setText(Html.fromHtml(musicEvent.getDate_to()));
 
         ImageView picture = (ImageView) convertView.findViewById(R.id.evt_img);
         Picasso.with(getContext()).load(musicEvent.getPicture()).into(picture);
