@@ -3,7 +3,7 @@ package com.mun.minh_minhh.interlac.Events;
 
 public class Review {
     //set to public to allow firebase access
-    public String author,content;
+    public String author,content,id;
     public int likes,dislikes;
     public float rating;
 

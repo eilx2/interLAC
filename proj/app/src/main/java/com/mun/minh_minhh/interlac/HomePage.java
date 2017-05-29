@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.Animation;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.Camera.CameraMain;
 import com.mun.minh_minhh.interlac.Chat.ChatMain;
@@ -21,6 +23,7 @@ import com.mun.minh_minhh.interlac.Events.Theater.TheaterMain;
 import com.mun.minh_minhh.interlac.Gallery.GalleryMain;
 
 public class HomePage extends BasicActivity {
+
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
         Window window = getWindow();
@@ -90,10 +93,13 @@ public class HomePage extends BasicActivity {
         init_mess();
         StartAnimations();
 
-
+        UserData.context = getApplicationContext();
+        UserData.getUserData();
+        Log.d("hello",UserData.getUid());
 
 
     }
+
     private void StartAnimations() {
 
 

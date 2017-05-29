@@ -38,12 +38,10 @@ public class SplashPage1 extends BasicActivity {
             @Override
             public void run() {
                 try {
-                    int waited = 0;
+
                     // Splash screen pause time
-                    while (waited < 5000) {
-                        sleep(100);
-                        waited += 100;
-                    }
+                    sleep(2000);
+
                     Intent intent = new Intent(SplashPage1.this,
                             HomePage.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);

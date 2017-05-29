@@ -15,7 +15,6 @@ import com.mun.minh_minhh.interlac.R;
 
 public class ReviewPage extends AppCompatActivity {
     private String pictureId;
-    private Review review;
     private final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     @Override

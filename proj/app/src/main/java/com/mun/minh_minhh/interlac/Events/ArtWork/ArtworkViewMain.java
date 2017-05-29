@@ -58,8 +58,6 @@ public class ArtworkViewMain extends BasicActivity {
     }
 
 
-
-
     private void loadMainInfo() {
         final DatabaseReference mRef = mDatabase.child("/artworks/"+pictureId);
 
@@ -162,7 +160,7 @@ public class ArtworkViewMain extends BasicActivity {
     }
 
     private void attachReviewsListener() {
-        reviewsAdapter = new ReviewAdapter(this,reviewList);
+        reviewsAdapter = new ReviewAdapter(this,reviewList,"reviews");
         ListView reviewList = (ListView) findViewById(R.id.reviewList);
         reviewList.setAdapter(reviewsAdapter);
 
@@ -203,6 +201,7 @@ public class ArtworkViewMain extends BasicActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Review review = dataSnapshot.getValue(Review.class);
                 String key = dataSnapshot.getKey();
+                review.id = key;
 
                 if (keyToReviewPos.get(dataSnapshot.getKey())!=null) {
                     int pos = keyToReviewPos.get(key);
