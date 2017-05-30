@@ -8,7 +8,9 @@
     android:orientation="vertical"
     android:paddingTop="20dp"
     android:paddingBottom="20dp"
-    android:paddingRight="10dp">
+    android:paddingRight="10dp"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true">
 
     <LinearLayout
         android:id="@+id/review1"
@@ -19,6 +21,7 @@
         <TextView
             android:id="@+id/iconname"
             android:layout_width="50dp"
+            android:textAllCaps="true"
             android:layout_height="50dp"
             android:background="@drawable/filled_circle"
             android:backgroundTint="@color/colorPrimaryDark"
@@ -69,8 +72,8 @@
 
                 <ImageButton
                     android:id="@+id/likeButton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:background="@drawable/thumbs_up"
                     android:backgroundTint="@color/colorPrimaryDark1" />
 

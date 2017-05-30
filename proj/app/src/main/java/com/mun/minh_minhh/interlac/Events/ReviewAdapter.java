@@ -21,7 +21,13 @@ import com.mun.minh_minhh.interlac.Events.Review;
 import com.mun.minh_minhh.interlac.R;
 import com.mun.minh_minhh.interlac.UserData;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+
+import static android.R.attr.author;
+import static android.R.attr.name;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
  * Created by marcel on 16.05.17.
@@ -52,6 +58,11 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
 
             TextView content = (TextView) convertView.findViewById(R.id.rowTextView);
             content.setText(review.content);
+
+            TextView nameIcon = (TextView) convertView.findViewById(R.id.iconname);
+
+            nameIcon.setText(review.author.substring(0,1));
+
 
             TextView author = (TextView) convertView.findViewById(R.id.review_author);
             author.setText(review.author);
