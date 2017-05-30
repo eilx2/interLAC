@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.mun.minh_minhh.interlac.Events.Reviews.ReviewPage;
 import com.mun.minh_minhh.interlac.R;
 
 public class EventReviewPage extends AppCompatActivity {
@@ -20,6 +21,14 @@ public class EventReviewPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review_page);
+
+        Button cancelReview = (Button) findViewById(R.id.cancelReview);
+        cancelReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventReviewPage.super.onBackPressed();
+            }
+        });
 
         Button postReview = (Button) findViewById(R.id.postReview);
         postReview.setOnClickListener(new View.OnClickListener() {
