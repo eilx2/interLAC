@@ -73,7 +73,7 @@ public class ChatRoom extends BasicActivity {
         sendMes = (EditText) findViewById(R.id.sendMes);
 
         roomName = getIntent().getExtras().get("Room_name").toString();
-        userName = getIntent().getExtras().get("User_name").toString();
+        userName = UserData.getName();
 
         TextView room = (TextView) findViewById(R.id.roomName);
         room.setText(roomName);
@@ -140,7 +140,7 @@ public class ChatRoom extends BasicActivity {
         chatUid = (String) dataSnapshot.child("uid").getValue();
 
         if(chatUid.equals(UserData.getUid())){
-            addMessageBox("You: " + chatMessage ,2);
+            addMessageBox(chatUserName + ": "+ chatMessage ,2);
         }
         else{
             addMessageBox(chatUserName + ": " + chatMessage ,1);

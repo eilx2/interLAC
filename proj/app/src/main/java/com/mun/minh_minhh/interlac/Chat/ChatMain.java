@@ -24,7 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
-import com.mun.minh_minhh.interlac.ChangeName;
 import com.mun.minh_minhh.interlac.R;
 import com.mun.minh_minhh.interlac.UserData;
 
@@ -41,7 +40,7 @@ public class ChatMain extends BasicActivity {
     Button creatRoom;
     ArrayList<String> roomArray;
     ArrayAdapter<String> roomAdapter;
-    private String userName;
+    private String userName = "";
 
     DatabaseReference databaseReference;
 
@@ -121,7 +120,7 @@ public class ChatMain extends BasicActivity {
     }
 
     private void request_name() {
-        if (UserData.getName()!="") {
+        if (!UserData.getName().equals("")) {
             userName = UserData.getName();
             return;
         }

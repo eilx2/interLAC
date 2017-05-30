@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mun.minh_minhh.interlac.ChangeName"
+    tools:context="com.mun.minh_minhh.interlac.Chat.ChangeName"
     android:gravity="center"
     >
 
@@ -36,6 +36,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/editName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"

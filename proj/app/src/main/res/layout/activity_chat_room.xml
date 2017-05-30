@@ -6,13 +6,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
+
     tools:context="com.mun.minh_minhh.interlac.Chat.ChatRoom">
     <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:layout_marginBottom="50dp"
        android:background="@android:color/transparent"
-       android:orientation="vertical">
+       android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
 
        <TextView
            android:layout_width="match_parent"
@@ -42,7 +45,8 @@
                    android:id="@+id/layout1"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
-                   android:orientation="vertical"></LinearLayout>
+                   android:orientation="vertical"
+                   ></LinearLayout>
            </RelativeLayout>
        </ScrollView>
 
@@ -67,7 +71,8 @@
         <RelativeLayout
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
+            android:layout_height="50dp"
+           >
 
             <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
                 android:id="@+id/bottomNav"

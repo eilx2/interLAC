@@ -73,7 +73,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Events.EventReviewPage"></activity>
-        <activity android:name=".ChangeName"
+        <activity android:name=".Chat.ChangeName"
             android:theme="@style/AppTheme.CustomTheme">
 
         </activity>
