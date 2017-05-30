@@ -24,6 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
+import com.mun.minh_minhh.interlac.ChangeName;
 import com.mun.minh_minhh.interlac.R;
 import com.mun.minh_minhh.interlac.UserData;
 
@@ -67,6 +68,14 @@ public class ChatMain extends BasicActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Chat");
 
         request_name();
+
+        Button b = (Button) findViewById(R.id.changeName);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChatMain.this, ChangeName.class));
+            }
+        });
 
         creatRoom.setOnClickListener(new View.OnClickListener() {
             @Override
