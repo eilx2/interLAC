@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
@@ -32,12 +33,46 @@ public class GalleryMain extends BasicActivity {
 
 
 
-        final Button button = (Button) findViewById(R.id.image1);
+        ImageButton button = (ImageButton) findViewById(R.id.image1);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Server.writeReview(1,new Review("john","lol,shit",0,2));
+
                 Intent intent = new Intent(GalleryMain.this, ArtworkViewMain.class);
                 intent.putExtra("id","1");
+                startActivity(intent);
+
+            }
+        });
+
+        button = (ImageButton) findViewById(R.id.image2);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GalleryMain.this, ArtworkViewMain.class);
+                intent.putExtra("id","2");
+                startActivity(intent);
+
+            }
+        });
+
+        button = (ImageButton) findViewById(R.id.image3);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GalleryMain.this, ArtworkViewMain.class);
+                intent.putExtra("id","3");
+                startActivity(intent);
+
+            }
+        });
+
+
+        button = (ImageButton) findViewById(R.id.image4);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Intent intent = new Intent(GalleryMain.this, ArtworkViewMain.class);
+                intent.putExtra("id","4");
                 startActivity(intent);
 
             }
