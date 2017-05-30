@@ -140,7 +140,7 @@ public class ChatRoom extends BasicActivity {
         chatUid = (String) dataSnapshot.child("uid").getValue();
 
         if(chatUid.equals(UserData.getUid())){
-            addMessageBox(chatUserName + ": "+ chatMessage ,2);
+            addMessageBox(chatMessage ,2);
         }
         else{
             addMessageBox(chatUserName + ": " + chatMessage ,1);
