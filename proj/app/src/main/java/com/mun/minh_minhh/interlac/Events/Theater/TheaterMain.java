@@ -32,18 +32,25 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 /**
  * Example of using Folding Cell with ListView and ListAdapter
  */
-public class TheaterMain extends BasicActivity {public Button button;
+public class TheaterMain extends BasicActivity {
+
 
     private String TAG = TheaterMain.class.getSimpleName();
     private ListView lv;
     private EventAdapter adapter;
     private ArrayList<Event> theaterEvents;
-
     ArrayList<HashMap<String, String>> eventList;
-    //public Button button;
+
+    public Button button;
+
+    String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
 
     public void init_music_button(){
         button = (Button)findViewById(R.id.button2);
@@ -119,7 +126,7 @@ public class TheaterMain extends BasicActivity {public Button button;
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/24/2017";
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from="+today;
             String jsonStrUncut = sh.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 

@@ -28,8 +28,10 @@ import com.mun.minh_minhh.interlac.R;
         import org.json.JSONException;
         import org.json.JSONObject;
 
-        import java.util.ArrayList;
-        import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
 public class MusicMain extends BasicActivity {
 
@@ -37,9 +39,10 @@ public class MusicMain extends BasicActivity {
     private ListView lv;
     private EventAdapter adapter;
     private ArrayList<Event> musicEvents;
-
     ArrayList<HashMap<String, String>> eventList;
+
     public Button button;
+    String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
 
 
     public void init_theater_button(){
@@ -118,7 +121,7 @@ public class MusicMain extends BasicActivity {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=05/24/2017";
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from="+today;
             String jsonStrUncut = sh.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
