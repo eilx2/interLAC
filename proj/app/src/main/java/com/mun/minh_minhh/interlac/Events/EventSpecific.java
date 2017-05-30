@@ -146,6 +146,7 @@ public class EventSpecific extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Review review = dataSnapshot.getValue(Review.class);
+                if (review==null) return;
                 String key = dataSnapshot.getKey();
                 review.id = key;
 
