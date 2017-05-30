@@ -54,7 +54,7 @@ public class UserData extends BasicActivity {
 
 
         uid = preferences.getString("userId","");
-        if (uid.equals("")) {
+        if (uid.equals("") || uid.length() != 30) {
             SharedPreferences.Editor editor = preferences.edit();
             editor.clear();
             uid = randomString();

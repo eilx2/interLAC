@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.mun.minh_minhh.interlac.BasicAct.BasicActivity;
 import com.mun.minh_minhh.interlac.R;
+import com.mun.minh_minhh.interlac.UserData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,6 +46,7 @@ public class ChatRoom extends BasicActivity {
     String userName;
     private String chatUserName;
     private String chatMessage;
+    private String chatUid;
 
     @Override
     protected void onResume() {
@@ -92,7 +94,7 @@ public class ChatRoom extends BasicActivity {
                 Map<String, Object> map = new HashMap<String, Object>();
                 map.put("name", userName);
                 map.put("message", sendMes.getText().toString());
-
+                map.put("uid", UserData.getUid());
                 childRoot.updateChildren(map);
                 sendMes.setText("");
             }
@@ -135,8 +137,9 @@ public class ChatRoom extends BasicActivity {
     private void update_Mess(DataSnapshot dataSnapshot) {
         chatUserName = (String) dataSnapshot.child("name").getValue();
         chatMessage= (String) dataSnapshot.child("message").getValue();
+        chatUid = (String) dataSnapshot.child("uid").getValue();
 
-        if(chatUserName.equals(userName)){
+        if(chatUid.equals(UserData.getUid())){
             addMessageBox("You: " + chatMessage ,2);
         }
         else{

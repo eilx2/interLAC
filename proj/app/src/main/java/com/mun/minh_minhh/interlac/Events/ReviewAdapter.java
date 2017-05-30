@@ -59,7 +59,12 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
             RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.reviewRatingBar);
             ratingBar.setRating(review.rating);
 
-            ImageButton likeButton = (ImageButton) convertView.findViewById(R.id.likeButton);
+
+            final ImageButton likeButton = (ImageButton) convertView.findViewById(R.id.likeButton);
+
+            if (UserData.containsReview(review.id)) likeButton.setBackgroundResource(R.drawable.thumbs_up1);
+            else likeButton.setBackgroundResource(R.drawable.thumbs_up);
+
             likeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -77,10 +82,12 @@ public class ReviewAdapter extends ArrayAdapter<Review> {
                             if (UserData.containsReview(id)) {
                                 review.likes--;
                                 UserData.removeReview(id);
+
                             }
                             else {
                                 review.likes++;
                                 UserData.addReview(id);
+
                             }
 
                             mutableData.setValue(review);
