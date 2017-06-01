@@ -58,7 +58,8 @@ public class EventReviewPage extends AppCompatActivity {
         mRef.setValue(review);
 
         String reviewId = mRef.getKey();
-        mRef = mDatabase.child("/events/"+ title + "/review_list");
+        String id = title.replaceAll("[\\[\\].#$]","");
+        mRef = mDatabase.child("/events/"+ id + "/review_list");
         mRef.push().setValue(reviewId);
         return true;
     }

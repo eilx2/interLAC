@@ -97,7 +97,7 @@ public class EventSpecific extends AppCompatActivity {
             String text = mBundle.getString("text");
 
             Picasso.with(getBaseContext()).load(picture_url).into(picture);
-            event_title_tView.setText(title);
+            event_title_tView.setText(Html.fromHtml(title));
             description_tView.setText(Html.fromHtml(text));
         }
 
@@ -111,7 +111,9 @@ public class EventSpecific extends AppCompatActivity {
         ListView reviewList = (ListView) findViewById(R.id.reviewList);
         reviewList.setAdapter(reviewsAdapter);
 
-        final DatabaseReference mRef = mDatabase.child("/events/"+ title + "/review_list");
+        String id = title.replaceAll("[\\[\\].#$]","");
+
+        final DatabaseReference mRef = mDatabase.child("/events/"+ id + "/review_list");
         mRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
