@@ -126,7 +126,7 @@ public class TheaterMain extends BasicActivity {
         protected Void doInBackground(Void... arg0) {
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from="+today;
+            String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=20/05/2017";
             String jsonStrUncut = sh.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
