@@ -96,6 +96,7 @@
                     android:textColor="@color/colorPrimaryDark1"
                     android:background="@android:color/transparent"
                     android:textAllCaps="false"
+                    android:layout_alignParentTop="true"
                     android:layout_alignParentStart="true" />
                 <ImageView
                     android:id="@+id/lin3"

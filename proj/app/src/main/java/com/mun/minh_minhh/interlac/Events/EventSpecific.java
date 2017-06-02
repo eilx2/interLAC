@@ -28,8 +28,9 @@ import java.util.HashMap;
 public class EventSpecific extends AppCompatActivity {
     private final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
     String title;
+    String picture_url;
+    String text;
     Bundle mBundle;
-    //private String TAG = "EventSpecific";
     private ReviewAdapter reviewsAdapter;
     private ArrayList<Review> reviewList = new ArrayList<>();
     private HashMap<String, Integer> keyToReviewPos = new HashMap<>();
@@ -71,7 +72,7 @@ public class EventSpecific extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(EventSpecific.this, EventReviewPage.class);
-                intent.putExtra("title", mBundle.getString("title"));
+                intent.putExtra("title", title);
                 startActivity(intent);
             }
         });
@@ -93,8 +94,8 @@ public class EventSpecific extends AppCompatActivity {
         if (mBundle != null) {
 
             title = mBundle.getString("title");
-            String picture_url = mBundle.getString("picture_url");
-            String text = mBundle.getString("text");
+            picture_url = mBundle.getString("picture_url");
+            text = mBundle.getString("text");
 
             Picasso.with(getBaseContext()).load(picture_url).into(picture);
             event_title_tView.setText(Html.fromHtml(title));

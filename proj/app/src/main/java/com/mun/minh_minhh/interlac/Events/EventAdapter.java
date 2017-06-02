@@ -22,19 +22,19 @@ public class EventAdapter extends ArrayAdapter<Event> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Event musicEvent = getItem(position);
+        Event event = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item2, parent, false);
         }
 
-        ((TextView) convertView.findViewById(R.id.title)).setText(Html.fromHtml(musicEvent.getTitle()));
-        ((TextView) convertView.findViewById(R.id.subtitle)).setText(Html.fromHtml(musicEvent.getSubtitle()));
-        ((TextView) convertView.findViewById(R.id.from)).setText(Html.fromHtml(musicEvent.getDate_from()));
-        ((TextView) convertView.findViewById(R.id.to)).setText(Html.fromHtml(musicEvent.getDate_to()));
+        ((TextView) convertView.findViewById(R.id.title)).setText(Html.fromHtml(event.getTitle()));
+        ((TextView) convertView.findViewById(R.id.subtitle)).setText(Html.fromHtml(event.getSubtitle()));
+        ((TextView) convertView.findViewById(R.id.from)).setText(Html.fromHtml(event.getDate_from()));
+        ((TextView) convertView.findViewById(R.id.to)).setText(Html.fromHtml(event.getDate_to()));
 
         ImageView picture = (ImageView) convertView.findViewById(R.id.evt_img);
-        Picasso.with(getContext()).load(musicEvent.getPicture()).into(picture);
+        Picasso.with(getContext()).load(event.getPicture()).into(picture);
         return convertView;
     }
 

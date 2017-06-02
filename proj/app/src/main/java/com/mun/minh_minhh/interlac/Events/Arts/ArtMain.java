@@ -38,7 +38,6 @@ public class ArtMain extends BasicActivity {
     private ListView lv;
     private EventAdapter adapter;
     private ArrayList<Event> artEvents;
-    ArrayList<HashMap<String, String>> eventList;
 
     public Button button;
 
@@ -100,7 +99,6 @@ public class ArtMain extends BasicActivity {
         init_theater_button();
         init_music_button();
 
-        eventList = new ArrayList<>();
         artEvents = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
 

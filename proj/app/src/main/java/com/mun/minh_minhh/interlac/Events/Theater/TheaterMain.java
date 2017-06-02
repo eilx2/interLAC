@@ -36,17 +36,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
-/**
- * Example of using Folding Cell with ListView and ListAdapter
- */
 public class TheaterMain extends BasicActivity {
 
 
     private String TAG = TheaterMain.class.getSimpleName();
     private ListView lv;
-    private EventAdapter adapter;
     private ArrayList<Event> theaterEvents;
-    ArrayList<HashMap<String, String>> eventList;
 
     public Button button;
 
@@ -107,10 +102,8 @@ public class TheaterMain extends BasicActivity {
         init_art_button();
         init_music_button();
 
-        eventList = new ArrayList<>();
         theaterEvents = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
-
 
         new TheaterMain.GetEvents().execute();
     }
@@ -124,10 +117,10 @@ public class TheaterMain extends BasicActivity {
 
         @Override
         protected Void doInBackground(Void... arg0) {
-            HttpHandler sh = new HttpHandler();
+            HttpHandler httpHandler = new HttpHandler();
             // Making a request to url and getting response
             String url = "http://luganolac.ch/export/?apikey=jz76KOe&date_from=20/05/2017";
-            String jsonStrUncut = sh.makeServiceCall(url);
+            String jsonStrUncut = httpHandler.makeServiceCall(url);
             String jsonStr = jsonStrUncut.substring(1, jsonStrUncut.length()-1);
 
             Log.e(TAG, "Response from url: " + jsonStr);
@@ -190,7 +183,7 @@ public class TheaterMain extends BasicActivity {
         @Override
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
-            adapter = new EventAdapter(TheaterMain.this, theaterEvents);
+            EventAdapter adapter = new EventAdapter(TheaterMain.this, theaterEvents);
             lv.setAdapter(adapter);
             lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override

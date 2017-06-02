@@ -39,7 +39,6 @@ public class MusicMain extends BasicActivity {
     private ListView lv;
     private EventAdapter adapter;
     private ArrayList<Event> musicEvents;
-    ArrayList<HashMap<String, String>> eventList;
 
     public Button button;
     String today = new SimpleDateFormat("MM/dd/yyyy").format(new Date());
@@ -102,7 +101,6 @@ public class MusicMain extends BasicActivity {
         init_theater_button();
         init_art_button();
 
-        eventList = new ArrayList<>();
         musicEvents = new ArrayList<>();
         lv = (ListView) findViewById(R.id.list);
 
